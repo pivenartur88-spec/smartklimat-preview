@@ -1,0 +1,2080 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Кондиционеры в Берёзе — продажа и установка с гарантией | SMARTKLIMAT.BY</title>
+<meta name="description" content="Установка кондиционеров в Берёзе (Брестская область). Монтаж от 500 руб, договор и гарантия до 5 лет, монтаж за 1 день. Выезд мастера и бесплатный замер — оставьте заявку.">
+<meta name="theme-color" content="#0a0a0b">
+<!-- Превью ссылки в мессенджерах и соцсетях -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Кондиционеры в Берёзе с установкой | SMARTKLIMAT.BY">
+<meta property="og:description" content="Продажа и установка кондиционеров в Берёзе и по Брестской области. Монтаж от 500 руб, гарантия до 5 лет.">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:site_name" content="SMARTKLIMAT.BY">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Кондиционеры в Берёзе с установкой | SMARTKLIMAT.BY">
+<meta name="twitter:description" content="Продажа и установка кондиционеров в Берёзе и по Брестской области. Монтаж от 500 руб, гарантия до 5 лет.">
+<!-- Schema.org: локальный бизнес (для Google — адрес, телефон, регион) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HVACBusiness",
+  "name": "SMARTKLIMAT.BY",
+  "description": "Продажа, доставка и установка кондиционеров в Минске, Бресте и областях. Официально, договор и гарантия до 5 лет.",
+  "url": "https://smartklimat.netlify.app/",
+  "telephone": "+375447611653",
+  "email": "info@smartklimat.by",
+  "priceRange": "от 500 BYN",
+  "areaServed": [
+    {"@type": "AdministrativeArea", "name": "Минская область"},
+    {"@type": "AdministrativeArea", "name": "Брестская область"}
+  ],
+  "address": {"@type": "PostalAddress", "addressCountry": "BY", "addressRegion": "Минская и Брестская области"},
+  "openingHoursSpecification": {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "09:00", "closes": "21:00"},
+  "makesOffer": {"@type": "Offer", "name": "Монтаж кондиционера под ключ", "priceCurrency": "BYN", "price": "500", "priceSpecification": {"@type": "PriceSpecification", "minPrice": "500", "priceCurrency": "BYN"}}
+}
+</script>
+<style>
+:root{
+  --bg:#0a0a0b;
+  --bg2:#121214;
+  --card:#17171a;
+  --card2:#1f1f23;
+  --line:rgba(255,255,255,.08);
+  --txt:#f4f4f5;
+  --mut:#a3a3ab;
+  --accent:#ffdc4e;
+  --accent2:#ff9f1c;
+  --accent3:#ffc400;
+  --glow:0 0 40px rgba(255,220,78,.35);
+  --radius:22px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  background:var(--bg);
+  color:var(--txt);
+  overflow-x:hidden;
+  line-height:1.6;
+}
+a{color:inherit;text-decoration:none}
+.container{max-width:1200px;margin:0 auto;padding:0 22px}
+.accent-text{
+  background:linear-gradient(90deg,var(--accent),var(--accent3),var(--accent2));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+
+/* ===== Aurora / air background ===== */
+.aurora{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+.blob{position:absolute;border-radius:50%;filter:blur(90px);opacity:.5;animation:float 18s ease-in-out infinite}
+.blob.b1{width:520px;height:520px;background:radial-gradient(circle,#c79100,transparent 60%);top:-140px;left:-120px}
+.blob.b2{width:460px;height:460px;background:radial-gradient(circle,#ff9f1c,transparent 60%);top:20%;right:-140px;animation-delay:-6s}
+.blob.b3{width:400px;height:400px;background:radial-gradient(circle,#ffdc4e,transparent 60%);bottom:-160px;left:30%;animation-delay:-11s}
+@keyframes float{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(40px,-40px) scale(1.12)}}
+
+/* snow particles */
+.snow{position:fixed;inset:0;z-index:0;pointer-events:none}
+.flake{position:absolute;top:-10px;color:#bfe9ff;opacity:.5;animation:fall linear infinite}
+@keyframes fall{to{transform:translateY(110vh) rotate(360deg)}}
+
+/* ===== Header ===== */
+header{
+  position:fixed;top:40px;left:0;right:0;z-index:100;
+  transition:top .3s,background .35s,padding .35s;padding:16px 0;
+}
+body.no-promo header{top:0}
+
+/* promo bar */
+.promo{
+  position:fixed;top:0;left:0;right:0;z-index:120;
+  background:linear-gradient(90deg,#f97316,#ef4444);
+  color:#fff;font-size:.9rem;font-weight:600;
+  display:flex;align-items:center;justify-content:center;gap:16px;
+  padding:9px 44px 9px 16px;text-align:center;min-height:40px;
+}
+.promo b{font-weight:800}
+.promo-cta{background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.5);padding:5px 14px;border-radius:100px;font-weight:700;white-space:nowrap;transition:.2s}
+.promo-cta:hover{background:#fff;color:#ef4444}
+.promo-x{position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;color:#fff;font-size:1.5rem;line-height:1;cursor:pointer;opacity:.85}
+.promo-x:hover{opacity:1}
+body.no-promo .promo{display:none}
+
+/* floating messenger stack */
+.float-stack{position:fixed;right:22px;bottom:22px;z-index:90;display:flex;flex-direction:column;gap:12px}
+.fbtn{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.4);transition:.2s}
+.fbtn:hover{transform:scale(1.1)}
+.fbtn svg{width:26px;height:26px;color:#fff}
+.fbtn.wa{background:#25D366}
+.fbtn.vb{background:#7360F2}
+.fbtn.tg{background:#29A9EA}
+.fbtn.call{background:linear-gradient(135deg,var(--accent),var(--accent2));animation:ring 2.5s infinite}
+/* Кнопка «ещё» — видна только на телефоне, разворачивает мессенджеры */
+.fab-toggle{display:none;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.1);border:1px solid var(--line);place-items:center;cursor:pointer;color:var(--txt);box-shadow:0 8px 24px rgba(0,0,0,.4);transition:transform .25s}
+.fab-toggle svg{width:20px;height:20px}
+.float-stack.open .fab-toggle{transform:rotate(45deg)}
+.fbtn.call svg{color:#0a0a0b}
+header.scrolled{
+  background:rgba(10,10,11,.82);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);padding:10px 0;
+}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{display:flex;align-items:center;gap:11px;font-weight:800;font-size:1.35rem;letter-spacing:.5px}
+.logo .mark{
+  width:40px;height:40px;border-radius:12px;display:grid;place-items:center;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  box-shadow:var(--glow);
+}
+.logo .mark svg{width:24px;height:24px}
+.nav-links{display:flex;gap:26px;align-items:center;font-size:.95rem;font-weight:500}
+.nav-links a{color:var(--mut);transition:.2s;position:relative}
+.nav-links a:hover{color:var(--txt)}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:2px;background:var(--accent);transition:.25s}
+.nav-links a:hover::after{width:100%}
+.nav-phone{
+  display:flex;align-items:center;gap:9px;font-weight:700;
+  padding:10px 18px;border-radius:14px;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  color:#0a0a0b;box-shadow:var(--glow);transition:.25s;white-space:nowrap;
+}
+.nav-phone:hover{transform:translateY(-2px);filter:brightness(1.08)}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px}
+.burger span{width:26px;height:3px;background:var(--txt);border-radius:3px;transition:.3s}
+
+/* ===== Hero ===== */
+.hero{position:relative;z-index:2;padding:200px 0 90px;text-align:center}
+body.no-promo .hero{padding-top:112px}
+.badge{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:8px 16px;border-radius:100px;font-size:.85rem;font-weight:600;
+  background:rgba(255,220,78,.1);border:1px solid rgba(255,220,78,.28);
+  color:var(--accent);margin-bottom:26px;
+}
+.badge .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent);animation:pulse 1.6s infinite}
+@keyframes pulse{50%{opacity:.35}}
+.hero h1{
+  font-size:clamp(2.4rem,6vw,4.6rem);line-height:1.05;font-weight:900;
+  letter-spacing:-1px;margin-bottom:22px;
+}
+.hero p.sub{font-size:clamp(1.05rem,2.2vw,1.35rem);color:var(--mut);max-width:640px;margin:0 auto 38px}
+.hero-cta{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.btn{
+  padding:16px 30px;border-radius:16px;font-weight:700;font-size:1.02rem;
+  cursor:pointer;border:none;transition:.25s;display:inline-flex;align-items:center;gap:10px;
+}
+.btn-primary{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#0a0a0b;box-shadow:var(--glow)}
+.btn-primary:hover{transform:translateY(-3px);filter:brightness(1.08)}
+.btn-ghost{background:rgba(255,255,255,.05);color:var(--txt);border:1px solid var(--line)}
+.btn-ghost:hover{background:rgba(255,255,255,.1);transform:translateY(-3px)}
+
+/* hero visual */
+.hero-visual{margin:52px auto 0;max-width:620px;position:relative}
+.hero-visual::before{content:"";position:absolute;inset:-6% 10% 6%;border-radius:50%;background:radial-gradient(circle,rgba(255,220,78,.35),transparent 66%);filter:blur(30px);z-index:-1}
+.hero-visual img{width:100%;height:auto;filter:drop-shadow(0 26px 60px rgba(0,0,0,.55));animation:hoverFloat 6s ease-in-out infinite}
+@keyframes hoverFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+
+/* stats */
+.stats{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:38px}
+.stat{
+  background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:18px;
+  padding:22px 30px;min-width:170px;backdrop-filter:blur(8px);
+}
+.stat .num{font-size:2.2rem;font-weight:900;line-height:1}
+.stat .lbl{color:var(--mut);font-size:.9rem;margin-top:6px}
+
+/* ===== Section shared ===== */
+section{position:relative;z-index:2}
+.sec{padding:90px 0}
+.sec-head{text-align:center;max-width:680px;margin:0 auto 54px}
+.sec-head .eyebrow{color:var(--accent);font-weight:700;letter-spacing:2px;text-transform:uppercase;font-size:.82rem}
+.sec-head h2{font-size:clamp(1.9rem,4vw,3rem);font-weight:900;margin:12px 0 14px;letter-spacing:-.5px}
+.sec-head p{color:var(--mut);font-size:1.08rem}
+
+/* ===== Advantages ===== */
+.adv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+/* Подзаголовок группы внутри объединённого блока преимуществ */
+.adv-group{display:flex;align-items:center;gap:14px;margin:44px 0 20px}
+.adv-group:first-of-type{margin-top:8px}
+.adv-group span{font-size:.82rem;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:var(--accent);white-space:nowrap}
+.adv-group:after{content:"";flex:1;height:1px;background:linear-gradient(90deg,rgba(255,220,78,.35),transparent)}
+.adv{
+  background:linear-gradient(160deg,var(--card),var(--card2));
+  border:1px solid var(--line);border-radius:var(--radius);padding:30px;
+  transition:.3s;position:relative;overflow:hidden;
+}
+.adv::before{content:"";position:absolute;inset:0;background:radial-gradient(400px circle at var(--x,50%) var(--y,0),rgba(255,220,78,.12),transparent 60%);opacity:0;transition:.3s}
+.adv:hover{transform:translateY(-6px);border-color:rgba(255,220,78,.35)}
+.adv:hover::before{opacity:1}
+.adv .ic{
+  width:56px;height:56px;border-radius:16px;display:grid;place-items:center;margin-bottom:18px;
+  background:linear-gradient(135deg,rgba(255,220,78,.18),rgba(255,159,28,.18));
+  color:var(--accent);border:1px solid rgba(255,220,78,.25);
+}
+.adv .ic svg{width:28px;height:28px}
+.adv h3{font-size:1.2rem;margin-bottom:8px}
+.adv p{color:var(--mut);font-size:.96rem}
+
+/* ===== Catalog ===== */
+.filters{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:38px}
+.filters button{
+  padding:9px 20px;border-radius:100px;background:rgba(255,255,255,.04);
+  border:1px solid var(--line);color:var(--mut);font-weight:600;cursor:pointer;transition:.2s;font-size:.92rem;
+}
+.filters button.active,.filters button:hover{background:var(--accent);color:#0a0a0b;border-color:var(--accent)}
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:22px}
+.card{
+  background:linear-gradient(160deg,var(--card),var(--card2));
+  border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
+  transition:.35s;display:flex;flex-direction:column;
+}
+.card:hover{transform:translateY(-8px);border-color:rgba(255,220,78,.4);box-shadow:0 20px 50px rgba(0,0,0,.5)}
+.card .img{
+  height:180px;position:relative;display:grid;place-items:center;
+  background:radial-gradient(circle at 50% 30%,#1c2b48,#121214);
+  overflow:hidden;
+}
+.card .img .ac{
+  width:78%;height:56px;border-radius:12px;position:relative;
+  background:linear-gradient(180deg,#fbfdff,#dfe9f5);
+  box-shadow:0 10px 30px rgba(0,0,0,.4);
+}
+.card .img .ac::before{content:"";position:absolute;left:8%;right:8%;bottom:9px;height:6px;border-radius:6px;background:#9fb4cf}
+.card .img .ac::after{content:"";position:absolute;left:12px;top:12px;width:34px;height:8px;border-radius:6px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+.card .img.photo{background:radial-gradient(circle at 50% 40%,#ffffff,#e6eef7);height:210px}
+.card .img.photo img{width:100%;height:100%;object-fit:contain;padding:16px;transition:.4s}
+.card:hover .img.photo img{transform:scale(1.06)}
+.card .img .wind{position:absolute;bottom:16px;left:0;right:0;height:60px}
+.card .brand-tag{position:absolute;top:12px;left:12px;font-size:.72rem;font-weight:800;letter-spacing:1px;padding:5px 11px;border-radius:8px;background:rgba(10,10,11,.6);border:1px solid var(--line);color:var(--accent)}
+.card .stock{position:absolute;top:12px;right:12px;font-size:.72rem;font-weight:700;padding:5px 11px;border-radius:8px;background:rgba(255,220,78,.15);color:var(--accent);border:1px solid rgba(255,220,78,.3)}
+.card .body{padding:20px;display:flex;flex-direction:column;flex:1}
+.card h3{font-size:1.12rem;margin-bottom:4px}
+.card .model{color:var(--mut);font-size:.82rem;margin-bottom:14px;font-family:monospace}
+.card .specs{display:flex;flex-direction:column;gap:8px;margin-bottom:16px}
+.card .specs .row{display:flex;align-items:center;gap:9px;font-size:.9rem;color:#d4d4d8}
+.card .specs .row svg{width:16px;height:16px;color:var(--accent);flex-shrink:0}
+.card .price-row{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:14px;border-top:1px solid var(--line)}
+.card .price{font-size:1.5rem;font-weight:900}
+.card .price small{font-size:.85rem;color:var(--mut);font-weight:600}
+.card .price.request{font-size:1.05rem;color:var(--accent)}
+.card .buy{padding:10px 18px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#0a0a0b;font-weight:700;cursor:pointer;border:none;transition:.2s;white-space:nowrap;font-size:.9rem}
+.card .buy:hover{filter:brightness(1.1);transform:scale(1.04)}
+
+/* ===== AC illustration ===== */
+.ac-svg{width:82%;filter:drop-shadow(0 14px 26px rgba(0,0,0,.45))}
+.flow{stroke-dasharray:7 11;animation:blow 1.3s linear infinite}
+.flow.f2{animation-delay:.22s}
+.flow.f3{animation-delay:.44s}
+@keyframes blow{to{stroke-dashoffset:-36}}
+
+/* ===== Calculator ===== */
+.calc-wrap{
+  display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);gap:26px;
+  background:linear-gradient(160deg,var(--card),var(--card2));
+  border:1px solid var(--line);border-radius:30px;padding:34px;
+}
+.calc-3d{display:flex;flex-direction:column;gap:16px}
+.c3d-top{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.c3d-tag{font-size:.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--accent)}
+.c3d-dims{font-weight:800;font-size:1.05rem}
+.c3d-stage{position:relative;background:radial-gradient(circle at 50% 28%,#1f1f23,#0a1019);border:1px solid var(--line);border-radius:20px;padding:8px}
+.c3d-stage svg{width:100%;height:auto;display:block;cursor:grab;touch-action:none}
+.c3d-stage svg:active{cursor:grabbing}
+.c3d-stage svg [data-idx]{cursor:move}
+.tbtn.heat{width:auto;padding:0 12px;font-size:.82rem;font-weight:700;white-space:nowrap}
+.tbtn.heat.on{background:linear-gradient(135deg,rgba(90,170,255,.25),rgba(255,150,86,.25));border-color:rgba(120,190,255,.5);color:var(--txt)}
+.c3d-legend{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;margin-top:12px;font-size:.82rem;color:var(--mut)}
+.c3d-legend .hl-item{display:inline-flex;align-items:center;gap:7px}
+.c3d-legend i{width:14px;height:14px;border-radius:4px;display:inline-block}
+.c3d-legend i.warm{background:rgb(255,150,86)}
+.c3d-legend i.cold{background:rgb(86,170,255)}
+.c3d-legend .hl-bar{flex:1;min-width:60px;height:8px;border-radius:5px;background:linear-gradient(90deg,rgb(255,150,86),#c9a5b0,rgb(86,170,255))}
+.c3d-legend .hl-tip{flex-basis:100%;color:var(--mut);font-size:.8rem;line-height:1.5}
+.c3d-legend.off{opacity:.35}
+.c3d-hint{position:absolute;left:0;right:0;bottom:8px;text-align:center;color:var(--mut);font-size:.72rem;pointer-events:none;opacity:.8}
+.c3d-bar{display:flex;align-items:center;gap:8px}
+.tbtn{width:40px;height:40px;border-radius:12px;background:rgba(255,255,255,.05);border:1px solid var(--line);color:var(--txt);font-size:1.1rem;cursor:pointer;transition:.2s;display:grid;place-items:center}
+.tbtn:hover{background:var(--accent);color:#0a0a0b}
+.tbtn.danger:hover{background:#ef4444;color:#fff}
+.c3d-sel{flex:1;color:var(--mut);font-size:.85rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.palette{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.pal-lbl{color:var(--mut);font-size:.85rem;font-weight:600;margin-right:2px}
+.pchip{padding:9px 13px;border-radius:11px;background:rgba(255,255,255,.04);border:1px solid var(--line);color:var(--txt);font-weight:600;cursor:pointer;transition:.2s;font-size:.86rem}
+.pchip:hover{background:rgba(255,220,78,.14);border-color:var(--accent);transform:translateY(-2px)}
+.ac-place{background:rgba(255,220,78,.07);border:1px solid rgba(255,220,78,.22);border-radius:14px;padding:14px 16px;color:#d4d4d8;font-size:.9rem;line-height:1.5}
+.ac-place b{color:var(--accent)}
+.dim-sliders{display:flex;flex-direction:column;gap:14px}
+.dim-sliders .field label{margin-bottom:8px}
+.calc-side{display:flex;flex-direction:column;gap:18px}
+.calc-out{margin-top:auto;background:radial-gradient(circle at 50% -30%,#232327,#121214);border:1px solid rgba(255,220,78,.25);border-radius:18px;padding:20px}
+.calc-out-main{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.co-lbl{color:var(--mut);font-size:.82rem}
+.co-kw{font-size:2.5rem;font-weight:900;line-height:1;margin-top:2px}
+.co-kw small{font-size:1rem;font-weight:700}
+.co-btu{color:var(--mut);font-size:.85rem;margin-top:5px}
+.co-class{background:rgba(255,220,78,.14);border:1px solid rgba(255,220,78,.3);color:var(--accent);font-weight:800;padding:8px 12px;border-radius:12px;font-size:.92rem;white-space:nowrap}
+.co-mdl{color:var(--mut);font-size:.86rem;margin:14px 0 16px}
+.calc-out .rbtns{display:flex;gap:10px}
+.calc-out .rbtns .btn{flex:1;justify-content:center;padding:13px}
+.calc-form{display:flex;flex-direction:column;gap:22px}
+.field label{display:flex;justify-content:space-between;align-items:center;font-weight:600;margin-bottom:12px;font-size:.98rem}
+.field label b{color:var(--accent);font-size:1.05rem}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:6px;border-radius:6px;background:rgba(255,255,255,.12);outline:none}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));cursor:pointer;box-shadow:var(--glow);border:3px solid #071018}
+input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:var(--accent);cursor:pointer;border:none}
+.seg{display:flex;gap:8px;flex-wrap:wrap}
+.seg button{flex:1;min-width:88px;padding:12px;border-radius:12px;background:rgba(255,255,255,.04);border:1px solid var(--line);color:var(--mut);font-weight:600;cursor:pointer;transition:.2s;font-size:.9rem}
+.seg button.active{background:var(--accent);color:#0a0a0b;border-color:var(--accent)}
+.stepper{display:flex;align-items:center;gap:16px}
+.stepper button{width:46px;height:46px;border-radius:12px;background:rgba(255,255,255,.05);border:1px solid var(--line);color:var(--txt);font-size:1.5rem;cursor:pointer;transition:.2s;line-height:1}
+.stepper button:hover{background:var(--accent);color:#0a0a0b}
+.stepper .n{font-size:1.5rem;font-weight:800;min-width:36px;text-align:center}
+.chips{display:flex;gap:10px;flex-wrap:wrap}
+.chip{display:flex;align-items:center;gap:8px;padding:11px 15px;border-radius:12px;background:rgba(255,255,255,.04);border:1px solid var(--line);color:var(--mut);font-weight:600;cursor:pointer;transition:.2s;font-size:.9rem;user-select:none}
+.chip.active{background:rgba(255,220,78,.14);border-color:var(--accent);color:var(--accent)}
+.calc-result{background:radial-gradient(circle at 50% -10%,#232327,#121214);border:1px solid var(--line);border-radius:22px;padding:30px 26px;display:flex;flex-direction:column;align-items:center;text-align:center}
+.calc-result .ac-svg{width:210px;max-width:74%;margin-bottom:4px}
+.calc-result .big{font-size:3.4rem;font-weight:900;line-height:1;margin:6px 0}
+.calc-result .btu{color:var(--mut);font-weight:600;margin-bottom:18px}
+.calc-result .rec{background:rgba(255,220,78,.08);border:1px solid rgba(255,220,78,.25);border-radius:16px;padding:15px 18px;margin-bottom:20px;width:100%}
+.calc-result .rec .cls{font-size:1.25rem;font-weight:800;color:var(--accent)}
+.calc-result .rec .mdl{color:var(--mut);font-size:.9rem;margin-top:6px}
+.calc-result .rbtns{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;width:100%}
+.calc-result .rbtns .btn{flex:1;min-width:150px;justify-content:center;padding:14px}
+@media(max-width:860px){.calc-wrap{grid-template-columns:minmax(0,1fr);padding:22px}}
+
+/* ===== Pricing ===== */
+.price-wrap{display:grid;grid-template-columns:1fr 1fr;gap:22px;max-width:900px;margin:0 auto}
+.price-main{background:linear-gradient(135deg,rgba(255,220,78,.14),rgba(255,159,28,.14));border:1px solid rgba(255,220,78,.28);border-radius:24px;padding:38px 30px;text-align:center;display:flex;flex-direction:column;justify-content:center;align-items:center}
+.price-big{font-size:clamp(2.4rem,5vw,3.4rem);font-weight:900;line-height:1;background:linear-gradient(90deg,var(--accent),var(--accent3),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.price-sub{color:var(--mut);margin:14px 0 24px;font-size:1rem}
+.price-factors{background:linear-gradient(160deg,var(--card),var(--card2));border:1px solid var(--line);border-radius:24px;padding:34px 30px}
+.price-badges{display:flex;flex-direction:column;gap:8px;margin:16px 0 20px}
+.price-badges span{font-size:.92rem;color:var(--txt);background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:10px;padding:9px 13px}
+.pf-title{font-weight:800;font-size:1.15rem;margin-bottom:18px}
+.price-factors ul{list-style:none;padding:0;margin:0 0 18px}
+.price-factors li{position:relative;padding:10px 0 10px 30px;color:#d4d4d8;border-bottom:1px solid var(--line)}
+.price-factors li:last-child{border:none}
+.price-factors li::before{content:"✓";position:absolute;left:0;color:var(--accent);font-weight:800}
+.pf-note{color:var(--mut);font-size:.9rem;background:rgba(255,220,78,.06);border:1px solid rgba(255,220,78,.2);border-radius:12px;padding:12px 14px}
+@media(max-width:640px){.price-wrap{grid-template-columns:1fr}}
+
+/* ===== Quiz ===== */
+.quiz-card{max-width:720px;margin:0 auto;background:linear-gradient(160deg,var(--card),var(--card2));border:1px solid rgba(255,220,78,.25);border-radius:28px;padding:40px 34px}
+.quiz-head{text-align:center;margin-bottom:26px}
+.quiz-head .eyebrow{color:var(--accent);font-weight:700;letter-spacing:2px;text-transform:uppercase;font-size:.8rem}
+.quiz-head h2{font-size:clamp(1.6rem,3.5vw,2.3rem);font-weight:900;margin:10px 0 8px}
+.quiz-head p{color:var(--mut)}
+.quiz-progress{height:6px;background:rgba(255,255,255,.08);border-radius:6px;overflow:hidden;margin-bottom:28px}
+.quiz-progress span{display:block;height:100%;width:33%;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:6px;transition:width .4s}
+.quiz-q{font-size:1.25rem;font-weight:700;text-align:center;margin-bottom:22px}
+.quiz-opts{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.quiz-opts button{padding:20px;border-radius:16px;background:rgba(255,255,255,.04);border:1px solid var(--line);color:var(--txt);font-size:1.05rem;font-weight:600;cursor:pointer;transition:.2s;font-family:inherit}
+.quiz-opts button:hover{background:rgba(255,220,78,.12);border-color:var(--accent);transform:translateY(-3px)}
+.quiz-form{display:flex;flex-direction:column;gap:14px;max-width:420px;margin:0 auto}
+.quiz-form input{padding:15px 18px;border-radius:14px;background:rgba(255,255,255,.04);border:1px solid var(--line);color:var(--txt);font-size:1rem;font-family:inherit;transition:.2s}
+.quiz-form input:focus{outline:none;border-color:var(--accent);background:rgba(255,220,78,.05)}
+.quiz-note{color:var(--mut);font-size:.82rem;text-align:center}
+.quiz-back{text-align:center;margin-top:18px}
+.quiz-back button{background:none;border:none;color:var(--mut);font-size:.92rem;cursor:pointer;font-family:inherit}
+.quiz-back button:hover{color:var(--accent)}
+.quiz-est{background:linear-gradient(135deg,rgba(255,220,78,.12),rgba(255,159,28,.1));border:1px solid rgba(255,220,78,.35);border-radius:14px;padding:16px 18px;margin-bottom:18px}
+.quiz-est .qe-lbl{font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--accent);font-weight:700;margin-bottom:5px}
+.quiz-est .qe-val{font-weight:700;font-size:1.02rem}
+.quiz-est .qe-note{color:var(--mut);font-size:.85rem;margin-top:6px}
+.quiz-done{text-align:center;font-size:1.5rem;font-weight:800;color:var(--accent);padding:30px 10px}
+.quiz-done span{display:block;font-size:1rem;font-weight:500;color:var(--mut);margin-top:10px}
+@media(max-width:560px){.quiz-opts{grid-template-columns:1fr}}
+
+/* ===== FAQ ===== */
+.faq-list{max-width:820px;margin:0 auto;display:flex;flex-direction:column;gap:14px}
+.faq-item{background:linear-gradient(160deg,var(--card),var(--card2));border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:.3s}
+.faq-item.open{border-color:rgba(255,220,78,.4)}
+.faq-q{width:100%;text-align:left;background:none;border:none;color:var(--txt);font-size:1.08rem;font-weight:600;padding:22px 24px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;font-family:inherit}
+.faq-ic{flex-shrink:0;width:30px;height:30px;border-radius:50%;background:rgba(255,220,78,.14);color:var(--accent);display:grid;place-items:center;font-size:1.3rem;font-weight:400;transition:.3s}
+.faq-item.open .faq-ic{transform:rotate(45deg);background:var(--accent);color:#0a0a0b}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.faq-a p{padding:0 24px 22px;color:var(--mut);font-size:.98rem;line-height:1.6}
+
+/* ===== Steps / How ===== */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px;counter-reset:s}
+.step{background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:var(--radius);padding:30px 26px;position:relative}
+.step::before{counter-increment:s;content:"0" counter(s);position:absolute;top:20px;right:24px;font-size:2.6rem;font-weight:900;color:rgba(255,220,78,.15)}
+.step .ic{width:50px;height:50px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,rgba(255,220,78,.18),rgba(255,159,28,.18));color:var(--accent);margin-bottom:16px}
+.step .ic svg{width:26px;height:26px}
+.step h3{font-size:1.12rem;margin-bottom:6px}
+.step p{color:var(--mut);font-size:.94rem}
+
+/* ===== Reviews ===== */
+.rev-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
+.rev{background:linear-gradient(160deg,var(--card),var(--card2));border:1px solid var(--line);border-radius:var(--radius);padding:28px}
+.rev .stars{color:#ffca3a;margin-bottom:14px;letter-spacing:3px}
+.rev p{color:#d3ddee;margin-bottom:18px;font-size:.98rem}
+.rev .who{display:flex;align-items:center;gap:12px}
+.rev .av{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-weight:800;color:#0a0a0b;background:linear-gradient(135deg,var(--accent),var(--accent2))}
+.rev .who b{display:block;font-size:.96rem}
+.rev .who span{color:var(--mut);font-size:.82rem}
+
+/* ===== CTA banner ===== */
+.cta-banner{
+  background:linear-gradient(135deg,rgba(255,220,78,.14),rgba(255,159,28,.14));
+  border:1px solid rgba(255,220,78,.28);border-radius:30px;padding:56px 40px;text-align:center;position:relative;overflow:hidden;
+}
+.cta-banner h2{font-size:clamp(1.8rem,4vw,2.7rem);font-weight:900;margin-bottom:14px}
+.cta-banner p{color:var(--mut);font-size:1.1rem;margin-bottom:30px}
+
+/* ===== Contacts ===== */
+.contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.contact-card{background:linear-gradient(160deg,var(--card),var(--card2));border:1px solid var(--line);border-radius:var(--radius);padding:36px}
+.contact-item{display:flex;align-items:center;gap:16px;padding:16px 0;border-bottom:1px solid var(--line)}
+.contact-item:last-child{border:none}
+.contact-item .ic{width:50px;height:50px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,rgba(255,220,78,.18),rgba(255,159,28,.18));color:var(--accent);flex-shrink:0}
+.contact-item .ic svg{width:24px;height:24px}
+.contact-item .lbl{color:var(--mut);font-size:.85rem}
+.contact-item .val{font-size:1.15rem;font-weight:700}
+form{display:flex;flex-direction:column;gap:14px}
+form input,form textarea{
+  padding:15px 18px;border-radius:14px;background:rgba(255,255,255,.04);
+  border:1px solid var(--line);color:var(--txt);font-size:1rem;font-family:inherit;transition:.2s;
+}
+form input:focus,form textarea:focus{outline:none;border-color:var(--accent);background:rgba(255,220,78,.05)}
+form textarea{resize:vertical;min-height:100px}
+
+/* ===== Footer ===== */
+footer{position:relative;z-index:2;border-top:1px solid var(--line);padding:50px 0 30px;margin-top:40px}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px;margin-bottom:36px}
+.foot-grid h4{margin-bottom:16px;font-size:1rem}
+.foot-grid a,.foot-grid p{display:block;color:var(--mut);margin-bottom:9px;font-size:.94rem;transition:.2s}
+.foot-grid a:hover{color:var(--accent)}
+.foot-bottom{text-align:center;color:var(--mut);font-size:.85rem;padding-top:24px;border-top:1px solid var(--line)}
+
+/* floating call */
+@keyframes ring{0%,100%{box-shadow:0 0 0 0 rgba(255,220,78,.5)}50%{box-shadow:0 0 0 16px rgba(255,220,78,0)}}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(40px);transition:.8s cubic-bezier(.16,1,.3,1)}
+.reveal.in{opacity:1;transform:none}
+
+/* mobile */
+@media(max-width:860px){
+  .nav-links{display:none}
+  .nav-links.open{
+    display:flex;flex-direction:column;position:absolute;top:70px;left:16px;right:16px;
+    background:var(--bg2);border:1px solid var(--line);border-radius:18px;padding:22px;gap:18px;
+  }
+  .burger{display:flex}
+  .nav-phone span.txt{display:none}
+  .contact-wrap{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr;gap:22px}
+}
+
+/* ===== Телефон: компактнее и без перекрытий ===== */
+@media(max-width:600px){
+  /* цифры — по две в ряд, а не колонкой на 4 экрана */
+  .stats{gap:10px}
+  .stat{min-width:0;flex:1 1 calc(50% - 5px);padding:16px 10px;border-radius:14px}
+  .stat .num{font-size:1.75rem}
+  .stat .lbl{font-size:.8rem}
+  /* плавающие кнопки мельче, чтобы не закрывали текст и кнопки */
+  .float-stack{right:12px;bottom:14px;gap:9px}
+  .fbtn{width:44px;height:44px}
+  .fbtn svg{width:21px;height:21px}
+  /* мессенджеры прячем под кнопку «+» — на экране остаются только «позвонить» и «ещё» */
+  .float-stack .fbtn.wa,.float-stack .fbtn.vb,.float-stack .fbtn.tg{display:none}
+  .float-stack.open .fbtn.wa,.float-stack.open .fbtn.vb,.float-stack.open .fbtn.tg{display:grid}
+  .fab-toggle{display:grid}
+  /* первый экран плотнее */
+  .hero{padding-left:0;padding-right:0}
+  body.no-promo .hero{padding-top:96px}
+  .hero p.sub{margin-bottom:28px}
+  .hero-cta .btn{width:100%;justify-content:center}
+  .hero-cta{gap:12px}
+  /* группы преимуществ — меньше воздуха */
+  .adv-group{margin:32px 0 16px}
+}
+
+/* ===== Акции и скидки ===== */
+.promo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
+.promo-card{position:relative;background:linear-gradient(160deg,var(--card),var(--card2));border:1px solid var(--line);border-radius:var(--radius);padding:28px 26px;display:flex;flex-direction:column;gap:12px;overflow:hidden;transition:.3s}
+.promo-card:hover{transform:translateY(-6px);border-color:rgba(255,220,78,.4);box-shadow:0 18px 50px rgba(0,0,0,.35)}
+.promo-card::before{content:"";position:absolute;right:-40px;top:-40px;width:150px;height:150px;background:radial-gradient(circle,rgba(255,220,78,.18),transparent 70%);pointer-events:none}
+.promo-card .p-badge{align-self:flex-start;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#0a0a0b;font-weight:800;font-size:.82rem;padding:6px 14px;border-radius:20px;letter-spacing:.5px}
+.promo-card .p-ic{width:54px;height:54px;border-radius:16px;background:rgba(255,220,78,.1);display:flex;align-items:center;justify-content:center;color:var(--accent)}
+.promo-card .p-ic svg{width:28px;height:28px}
+.promo-card h3{font-size:1.32rem;font-weight:800;letter-spacing:-.3px}
+.promo-card p{color:var(--mut);font-size:.98rem;flex:1}
+.promo-card .p-btn{margin-top:6px;align-self:flex-start;padding:11px 22px;border-radius:12px;border:1px solid var(--accent);color:var(--accent);font-weight:700;cursor:pointer;background:transparent;transition:.2s;font-size:.92rem}
+.promo-card .p-btn:hover{background:var(--accent);color:#0a0a0b}
+
+/* ===== Портфолио работ ===== */
+.port-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:22px}
+.port-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;transition:.3s}
+.port-card:hover{transform:translateY(-6px);border-color:rgba(255,220,78,.4);box-shadow:0 18px 50px rgba(0,0,0,.35)}
+.port-card .p-img{position:relative;aspect-ratio:4/3;background:linear-gradient(160deg,#1f1f23,#121214);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.port-card .p-img img{width:100%;height:100%;object-fit:cover}
+.port-card .p-img .p-price{position:absolute;left:14px;bottom:14px;background:rgba(10,10,11,.82);backdrop-filter:blur(6px);color:var(--txt);font-weight:800;padding:8px 14px;border-radius:12px;font-size:1.05rem;border:1px solid var(--line)}
+.port-card .p-body{padding:20px 22px;display:flex;flex-direction:column;gap:14px;flex:1}
+.port-card .p-body h3{font-size:1.16rem;font-weight:800}
+.port-meta{display:flex;gap:10px;flex-wrap:wrap}
+.port-meta span{background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:10px;padding:6px 12px;font-size:.86rem;color:var(--mut)}
+.port-meta span b{color:var(--txt);font-weight:700}
+.port-card .p-desc{color:var(--mut);font-size:.94rem;flex:1}
+.port-card .p-order{margin-top:auto;padding:11px 0;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#0a0a0b;font-weight:700;cursor:pointer;border:none;transition:.2s;text-align:center}
+.port-card .p-order:hover{filter:brightness(1.08);transform:translateY(-2px)}
+
+/* ===== Прайс-лист / лид-магнит ===== */
+.price-lead{display:grid;grid-template-columns:1.25fr .95fr;gap:24px;align-items:stretch}
+.pricetable-wrap{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.pricetable{width:100%;border-collapse:collapse;font-size:.95rem}
+.pricetable th{text-align:left;padding:14px 18px;background:var(--card2);color:var(--mut);font-weight:700;font-size:.8rem;text-transform:uppercase;letter-spacing:1px}
+.pricetable td{padding:13px 18px;border-top:1px solid var(--line)}
+.pricetable tr:hover td{background:rgba(255,255,255,.02)}
+.pricetable .pt-name b{font-weight:700}
+.pricetable .pt-name small{display:block;color:var(--mut);font-size:.8rem}
+.pricetable .pt-price{text-align:right;font-weight:800;white-space:nowrap}
+.pricetable .pt-price.req{color:var(--mut);font-weight:600;font-size:.86rem}
+.pricelead-card{background:linear-gradient(160deg,var(--card),var(--card2));border:1px solid var(--line);border-radius:var(--radius);padding:28px 26px;display:flex;flex-direction:column;gap:14px}
+.pricelead-card h3{font-size:1.3rem;font-weight:800}
+.pricelead-card p{color:var(--mut);font-size:.95rem}
+.pricelead-card form{display:flex;flex-direction:column;gap:12px;margin-top:auto}
+.pricelead-card input{width:100%;padding:14px 16px;border-radius:12px;border:1px solid var(--line);background:var(--bg2);color:var(--txt);font-size:1rem}
+.btn-pdf{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px;border-radius:12px;border:1px dashed var(--line);background:transparent;color:var(--mut);font-weight:600;cursor:pointer;transition:.2s;font-size:.92rem}
+.btn-pdf:hover{color:var(--accent);border-color:var(--accent)}
+@media(max-width:760px){.price-lead{grid-template-columns:1fr}}
+
+/* ===== Выбор мессенджера в форме ===== */
+.msg-choice{display:flex;flex-direction:column;gap:8px}
+.msg-choice .mc-lbl{color:var(--mut);font-size:.85rem}
+.msg-opts{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.msg-opt{display:flex;flex-direction:column;align-items:center;gap:5px;padding:11px 4px;border-radius:12px;border:1px solid var(--line);background:var(--bg2);color:var(--mut);cursor:pointer;transition:.2s;font-size:.78rem;font-weight:600}
+.msg-opt svg{width:22px;height:22px}
+.msg-opt:hover{border-color:rgba(255,220,78,.4);color:var(--txt)}
+.msg-opt.active{border-color:var(--accent);background:rgba(255,220,78,.12);color:var(--txt)}
+@media(max-width:400px){.msg-opts{grid-template-columns:repeat(2,1fr)}}
+
+/* ===== Печатный прайс-лист (Save as PDF) ===== */
+.pricesheet{display:none}
+@media print{
+  body *{visibility:hidden}
+  .pricesheet,.pricesheet *{visibility:visible}
+  .pricesheet{display:block;position:absolute;left:0;top:0;width:100%;padding:30px;color:#000;background:#fff;font-family:Arial,sans-serif}
+  .pricesheet h1{font-size:22px;margin-bottom:4px;color:#121214}
+  .pricesheet .ps-sub{color:#555;font-size:13px;margin-bottom:18px}
+  .pricesheet table{width:100%;border-collapse:collapse;font-size:13px}
+  .pricesheet th,.pricesheet td{border:1px solid #ccc;padding:8px 10px;text-align:left}
+  .pricesheet th{background:#f0f3f8}
+  .pricesheet .ps-foot{margin-top:18px;font-size:12px;color:#555}
+  .float-stack,.promo,.snow,.aurora{display:none!important}
+}
+
+/* ===== Карточка каталога: подсказка «Подробнее» ===== */
+.card{position:relative}
+.card .more-hint{position:absolute;left:12px;bottom:12px;background:rgba(10,10,11,.78);backdrop-filter:blur(6px);color:var(--accent);font-size:.8rem;font-weight:700;padding:6px 12px;border-radius:20px;border:1px solid rgba(255,220,78,.35);opacity:0;transform:translateY(6px);transition:.25s;pointer-events:none}
+.card:hover .more-hint{opacity:1;transform:none}
+
+/* ===== Окно товара ===== */
+#prodModal{position:fixed;inset:0;z-index:1000;display:none;align-items:flex-start;justify-content:center;padding:40px 16px}
+#prodModal.open{display:flex}
+#prodModal .pm-back{position:fixed;inset:0;background:rgba(6,6,7,.72);backdrop-filter:blur(6px)}
+#prodModal .pm-inner{position:relative;z-index:1;width:100%;max-width:860px;max-height:calc(100vh - 80px);overflow-y:auto;background:var(--bg2);border:1px solid var(--line);border-radius:24px;padding:26px;box-shadow:0 30px 80px rgba(0,0,0,.5);animation:pmIn .35s cubic-bezier(.16,1,.3,1)}
+@keyframes pmIn{from{opacity:0;transform:translateY(30px) scale(.98)}to{opacity:1;transform:none}}
+.pm-close{position:absolute;top:14px;right:14px;width:38px;height:38px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--txt);font-size:22px;line-height:1;cursor:pointer;z-index:2;transition:.2s}
+.pm-close:hover{background:var(--card2);transform:rotate(90deg)}
+.pm-top{display:grid;grid-template-columns:300px 1fr;gap:24px}
+.pm-photo{position:relative;background:linear-gradient(160deg,#1f1f23,#121214);border:1px solid var(--line);border-radius:18px;aspect-ratio:1;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:14px}
+.pm-photo.has{padding:0}
+.pm-photo img{width:100%;height:100%;object-fit:cover}
+.pm-photo:not(.has) img,.pm-photo svg{width:90%;height:auto;object-fit:contain}
+.pm-brand{position:absolute;top:12px;left:12px;z-index:1;background:rgba(255,220,78,.15);color:var(--accent);font-weight:800;font-size:.78rem;padding:5px 12px;border-radius:20px;border:1px solid rgba(255,220,78,.4)}
+.pm-info h3{font-size:1.5rem;font-weight:900;letter-spacing:-.4px}
+.pm-info .pm-model{color:var(--mut);font-size:.9rem;margin:4px 0 12px}
+.pm-price{font-size:1.6rem;font-weight:900;color:var(--accent);margin-bottom:12px}
+.pm-price small{font-size:.9rem;color:var(--mut);font-weight:600}
+.pm-price .pm-req{font-size:1.05rem;color:var(--mut);font-weight:700}
+.pm-desc{color:var(--txt);opacity:.9;font-size:.96rem;margin-bottom:14px}
+.pm-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.pm-tag{background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:20px;padding:6px 12px;font-size:.82rem;color:var(--txt)}
+.pm-specs{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:18px}
+.pm-specs>div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px;display:flex;flex-direction:column;gap:2px}
+.pm-specs small{color:var(--mut);font-size:.76rem}
+.pm-specs b{font-size:.95rem}
+.pm-cta{display:flex;gap:12px;flex-wrap:wrap}
+.pm-cta .btn{flex:1;min-width:150px;justify-content:center}
+.pm-sect{margin-top:26px;padding-top:22px;border-top:1px solid var(--line)}
+.pm-sect h4{font-size:1.12rem;font-weight:800;margin-bottom:16px}
+.pm-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px}
+.pm-step{display:flex;gap:12px;align-items:flex-start}
+.pm-num{flex:none;width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#0a0a0b;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:.95rem}
+.pm-step b{display:block;font-size:.92rem}
+.pm-step small{color:var(--mut);font-size:.82rem;line-height:1.4}
+.pm-works{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.pm-work{border-radius:14px;overflow:hidden;border:1px solid var(--line);background:var(--card)}
+.pm-work img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+.pm-work figcaption{padding:9px 12px;font-size:.85rem;color:var(--mut)}
+@media(max-width:640px){
+  #prodModal{padding:0}
+  #prodModal .pm-inner{max-width:100%;max-height:100vh;min-height:100vh;border-radius:0;padding:20px}
+  .pm-top{grid-template-columns:1fr}
+  .pm-photo{aspect-ratio:16/10}
+}
+
+/* ===== Селект города в форме ===== */
+.lead-city{width:100%;padding:14px 16px;border-radius:12px;border:1px solid var(--line);background:var(--bg2);color:var(--txt);font-size:1rem;cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23a3a3ab' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:44px}
+.lead-city option{background:var(--bg2);color:var(--txt)}
+
+/* ===== Секция «Города обслуживания» ===== */
+.geo-wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;align-items:center}
+.geo-cities{display:flex;flex-direction:column;gap:18px}
+.geo-region h4{font-size:.9rem;font-weight:700;color:var(--accent);margin-bottom:10px;letter-spacing:.3px}
+.geo-chips{display:flex;flex-wrap:wrap;gap:10px}
+.geo-chips a{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:9px 15px;font-size:.92rem;color:var(--txt);transition:.2s;display:inline-flex;align-items:center;gap:7px}
+.geo-chips a::before{content:"📍";font-size:.85rem}
+.geo-chips a:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+.geo-note{background:linear-gradient(160deg,var(--card),var(--card2));border:1px solid var(--line);border-radius:var(--radius);padding:26px}
+.geo-note h3{font-size:1.3rem;font-weight:800;margin-bottom:10px}
+.geo-note p{color:var(--mut);font-size:.95rem;margin-bottom:8px}
+.geo-note .geo-hi{color:var(--accent);font-weight:700}
+@media(max-width:760px){.geo-wrap{grid-template-columns:1fr}}
+</style>
+<link rel="canonical" href="city-bereza.html">
+</head>
+<body>
+<script>window.__CITYPAGE="Берёза";window.__CITYSLUG="bereza";</script>
+
+<!-- ПРОМО-БАР -->
+<!-- оранжевая плашка-акция убрана по просьбе Артура -->
+
+
+<div class="aurora">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+</div>
+
+<!-- HEADER -->
+<header id="header">
+  <div class="container nav">
+    <a href="#top" class="logo">
+      <span class="mark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#0a0a0b" stroke-width="2.2" stroke-linecap="round"><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6L5.6 18.4"/></svg>
+      </span>
+      <span>SMART<span class="accent-text">KLIMAT</span></span>
+    </a>
+    <nav class="nav-links" id="navlinks">
+      <a href="#promos">Акции</a>
+      <a href="#calc">Калькулятор</a>
+      <a href="#catalog">Каталог</a>
+      <a href="#pricelist">Прайс</a>
+      <a href="#portfolio">Работы</a>
+      <a href="#faq">Вопросы</a>
+      <a href="kak-vybrat-konditsioner.html">Как выбрать</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+    <a href="tel:+375447611653" class="nav-phone">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#0a0a0b" stroke-width="2.2" stroke-linecap="round" style="width:18px;height:18px"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      <span class="txt">+375 44 761-16-53</span>
+    </a>
+    <div class="burger" id="burger"><span></span><span></span><span></span></div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="container">
+    <div class="badge"><span class="dot"></span>Замер и доставка — бесплатно · Берёза</div>
+    <h1>Кондиционеры в Берёзе<br>с <span class="accent-text">установкой</span></h1>
+    <p class="sub">Продажа, доставка и профессиональная установка кондиционеров в Берёзе и по Брестской области — выезд мастера, монтаж за 1 день. Качественное оборудование, честные цены и гарантия до 5 лет.</p>
+    <div class="hero-cta">
+      <a href="#catalog" class="btn btn-primary">
+        Смотреть каталог
+        <svg viewBox="0 0 24 24" fill="none" stroke="#0a0a0b" stroke-width="2.4" stroke-linecap="round" style="width:18px;height:18px"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a href="#contacts" class="btn btn-ghost">Бесплатный замер</a>
+    </div>
+    <!-- Цифры подняты вверх: видны сразу, без прокрутки -->
+    <div class="stats">
+      <div class="stat reveal"><div class="num accent-text" data-count="800" data-text="800+">0</div><div class="lbl">установок выполнено</div></div>
+      <div class="stat reveal"><div class="num accent-text" data-count="11">0</div><div class="lbl">лет на рынке</div></div>
+      <div class="stat reveal"><div class="num accent-text" data-count="5">0</div><div class="lbl">лет гарантии</div></div>
+      <div class="stat reveal"><div class="num accent-text" data-count="0" data-text="24ч">0</div><div class="lbl">монтаж за 1 день</div></div>
+    </div>
+    <!-- Большое фото кондиционера опущено под цифры -->
+    <div class="hero-visual reveal">
+      <img src="images/pioneer-artis-big.png" alt="Кондиционер Pioneer Artis Inverter — внутренний и внешний блок, пульт">
+    </div>
+  </div>
+</section>
+
+<!-- ADVANTAGES -->
+<section class="sec" id="advantages">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Преимущества</div>
+      <h2>Почему выбирают <span class="accent-text">SMARTKLIMAT</span></h2>
+      <p>Всё главное в одном месте: что даём мы, что умеет техника и под какую комнату она подойдёт.</p>
+    </div>
+    <div class="adv-group reveal"><span>Что даём мы</span></div>
+    <div class="adv-grid">
+      <div class="adv reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+        <h3>Замер бесплатно</h3>
+        <p>Приедем, замерим помещение и подберём оптимальную мощность — без оплаты и обязательств.</p>
+      </div>
+      <div class="adv reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M1 3h15v13H1zM16 8h4l3 3v5h-7zM5.5 21a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM18.5 21a2.5 2.5 0 100-5 2.5 2.5 0 000 5z"/></svg></div>
+        <h3>Доставка бесплатно</h3>
+        <p>Привезём кондиционер по Минску в удобное время без дополнительной платы.</p>
+      </div>
+      <div class="adv reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h3>Гарантия до 5 лет</h3>
+        <p>Гарантия на оборудование и на установку. Работаем официально и отвечаем за качество.</p>
+      </div>
+      <div class="adv reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14.7 6.3a5 5 0 00-6.4 6.4L3 18v3h3l5.3-5.3a5 5 0 006.4-6.4l-3 3-2.5-.5-.5-2.5 3-3z"/></svg></div>
+        <h3>Монтаж под ключ</h3>
+        <p>Профессиональная бригада установит технику аккуратно и в срок — обычно за один день.</p>
+      </div>
+      <div class="adv reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 000-7.78z"/></svg></div>
+        <h3>Сервис и обслуживание</h3>
+        <p>Чистка, заправка и обслуживание любых сплит-систем — продлеваем срок службы техники.</p>
+      </div>
+      <div class="adv reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
+        <h3>Честные цены</h3>
+        <p>Стоимость без скрытых доплат. Расскажем обо всех расходах ещё до начала работ.</p>
+      </div>
+    </div>
+
+    <div class="adv-group reveal" id="features"><span>Что умеет техника</span></div>
+    <div class="adv-grid">
+      <div class="adv reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3v18M3 12h18M6 6l12 12M18 6L6 18"/></svg></div>
+        <h3>Охлаждение</h3>
+        <p>Быстро охлаждает комнату в жару до комфортных 22–24°C и держит температуру ровно.</p>
+      </div>
+      <div class="adv reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v20M12 2c-3 3-3 6 0 8s3 5 0 8M5 8l14 8M19 8L5 16"/></svg></div>
+        <h3>Обогрев</h3>
+        <p>Тепловой насос греет весной и осенью. Модели LOW работают на обогрев даже в мороз до −25°C.</p>
+      </div>
+      <div class="adv reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2s6 7 6 12a6 6 0 01-12 0c0-5 6-12 6-12z"/></svg></div>
+        <h3>Осушение</h3>
+        <p>Убирает лишнюю влажность и сырость — актуально для кухни, ванной и первых этажей.</p>
+      </div>
+      <div class="adv reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></div>
+        <h3>Очистка и ионизация</h3>
+        <p>Генератор ионов Cold Plasma и фильтры очищают воздух от пыли, бактерий и запахов.</p>
+      </div>
+      <div class="adv reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="5" y="2" width="14" height="20" rx="3"/><path d="M11 6h2M12 18h.01"/></svg></div>
+        <h3>Wi-Fi управление</h3>
+        <p>Включайте кондиционер со смартфона из любой точки — придёте в уже прохладную квартиру.</p>
+      </div>
+      <div class="adv reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M11 5L6 9H2v6h4l5 4V5zM19 5a10 10 0 010 14"/><path d="M15.5 8.5a5 5 0 010 7" opacity=".4"/></svg></div>
+        <h3>Тихая работа</h3>
+        <p>Уровень шума от 27 дБ — тише шёпота. Не мешает спать даже в ночном режиме.</p>
+      </div>
+      <div class="adv reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M13 2L3 14h9l-1 8 10-12h-9z"/></svg></div>
+        <h3>Экономия энергии</h3>
+        <p>Инверторный компрессор GREE экономит до 40% электричества по сравнению с обычными сплитами.</p>
+      </div>
+      <div class="adv reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M6 6l1 14a2 2 0 002 2h6a2 2 0 002-2l1-14M9 6V4h6v2"/></svg></div>
+        <h3>Умные фильтры</h3>
+        <p>Сменные фильтры — серебро, катехин, витамин C — против пыли, аллергенов и бактерий.</p>
+      </div>
+    </div>
+
+    <div class="adv-group reveal" id="usecases"><span>Под какую комнату</span></div>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 21V9l9-6 9 6v12M9 21v-6h6v6"/></svg></div>
+        <h3>Спальня и детская</h3>
+        <p>До 20 м². Класс «07», тихий ночной режим и мягкий поток без сквозняка.</p>
+      </div>
+      <div class="step reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+        <h3>Гостиная и кухня</h3>
+        <p>20–35 м². Классы «09»–«12», быстрое охлаждение и осушение для больших комнат.</p>
+      </div>
+      <div class="step reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M8 7V4h8v3"/></svg></div>
+        <h3>Офис и кабинет</h3>
+        <p>До 27 м². Инвертор + Wi-Fi, стабильная температура весь рабочий день, экономный расход.</p>
+      </div>
+      <div class="step reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-5h6v5"/></svg></div>
+        <h3>Дом и несколько комнат</h3>
+        <p>Большая площадь. Мощные модели или мультисплит — один внешний блок на пару комнат.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- АКЦИИ И СКИДКИ (перенесены под объединённый блок преимуществ) -->
+<section class="sec" id="promos" style="padding-top:0">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Акции и скидки</div>
+      <h2>Выгодные <span class="accent-text">предложения</span></h2>
+      <p>Успейте оформить заявку на действующих условиях — количество ограничено.</p>
+    </div>
+    <div class="promo-grid">
+      <div class="promo-card reveal">
+        <span class="p-badge">Хит сезона</span>
+        <div class="p-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14.7 6.3a5 5 0 00-6.4 6.4L3 18v3h3l5.3-5.3a5 5 0 006.4-6.4l-3 3-2.5-.5-.5-2.5 3-3z"/></svg></div>
+        <h3>Монтаж со скидкой 20%</h3>
+        <p>При покупке кондиционера у нас — стандартный монтаж со скидкой 20%. Замер и доставка бесплатно.</p>
+        <button type="button" class="p-btn" onclick="quickOrder('Акция: монтаж со скидкой 20%')">Участвовать</button>
+      </div>
+      <div class="promo-card reveal">
+        <span class="p-badge">Выгода</span>
+        <div class="p-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 12v9H4v-9M2 7h20v5H2zM12 22V7M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z"/></svg></div>
+        <h3>Второй блок — дешевле</h3>
+        <p>Ставите два кондиционера в одной квартире? На второй внутренний блок — специальная цена.</p>
+        <button type="button" class="p-btn" onclick="quickOrder('Акция: второй блок дешевле')">Участвовать</button>
+      </div>
+      <div class="promo-card reveal">
+        <span class="p-badge">Для новосёлов</span>
+        <div class="p-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M9 22V12h6v10"/></svg></div>
+        <h3>Скидка новосёлам</h3>
+        <p>Купили квартиру в новостройке? Покажите документы на жильё и получите дополнительную скидку.</p>
+        <button type="button" class="p-btn" onclick="quickOrder('Акция: скидка новосёлам')">Участвовать</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- КАЛЬКУЛЯТОР -->
+<section class="sec" id="calc">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Калькулятор мощности</div>
+      <h2>Подберите кондиционер <span class="accent-text">за 20 секунд</span></h2>
+      <p>Ответьте на пару вопросов — рассчитаем нужную мощность и подскажем подходящую модель. Бесплатно.</p>
+    </div>
+    <div class="calc-wrap reveal">
+      <!-- 3D план помещения -->
+      <div class="calc-3d">
+        <div class="c3d-top">
+          <span class="c3d-tag">◳ 3D-план помещения</span>
+          <span class="c3d-dims" id="dimsRead">4.0 × 4.0 × 3.0 м</span>
+        </div>
+        <div class="c3d-stage">
+          <svg id="room3d" viewBox="0 0 440 340" xmlns="http://www.w3.org/2000/svg"></svg>
+          <div class="c3d-hint">Тяните фон — комната вращается · тяните предметы — двигаются</div>
+        </div>
+        <div class="c3d-bar">
+          <button class="tbtn" id="rotL" title="Повернуть влево">⟲</button>
+          <button class="tbtn" id="rotR" title="Повернуть вправо">⟳</button>
+          <button class="tbtn" id="resetView" title="Сбросить вид">⌂</button>
+          <button class="tbtn heat on" id="heatBtn" title="Карта тёплых и холодных зон">🌡️ Комфорт</button>
+          <span class="c3d-sel" id="selInfo">Выбрано: —</span>
+          <button class="tbtn danger" id="delSel" title="Удалить выбранное">🗑</button>
+        </div>
+        <div class="c3d-legend" id="heatLegend">
+          <span class="hl-item"><i class="warm"></i> Тёпло, комфортно</span>
+          <span class="hl-bar"></span>
+          <span class="hl-item"><i class="cold"></i> Прямой поток — сквозняк, риск простыть</span>
+          <span class="hl-tip">💡 Двигайте кондиционер по стене — зоны меняются. Не направляйте поток на кровать и рабочее место.</span>
+        </div>
+        <div class="palette">
+          <span class="pal-lbl">Добавить в комнату:</span>
+          <button class="pchip" data-add="window">🪟 Окно</button>
+          <button class="pchip" data-add="sofa">🛋️ Диван</button>
+          <button class="pchip" data-add="bed">🛏️ Кровать</button>
+          <button class="pchip" data-add="table">🍽️ Стол</button>
+          <button class="pchip" data-add="door">🚪 Дверь</button>
+        </div>
+        <div class="dim-sliders">
+          <div class="field">
+            <label>Длина <b><span id="lV">4.0</span> м</b></label>
+            <input type="range" id="L" min="2" max="10" step="0.5" value="4">
+          </div>
+          <div class="field">
+            <label>Ширина <b><span id="wV">4.0</span> м</b></label>
+            <input type="range" id="W" min="2" max="10" step="0.5" value="4">
+          </div>
+          <div class="field">
+            <label>Высота потолков <b><span id="hV">3.0</span> м</b></label>
+            <input type="range" id="H" min="2.3" max="4" step="0.1" value="3">
+          </div>
+        </div>
+      </div>
+      <!-- параметры + результат -->
+      <div class="calc-side">
+        <div class="field">
+          <label>Освещённость помещения</label>
+          <div class="seg" id="side">
+            <button data-q="30">Теневая</button>
+            <button data-q="35" class="active">Обычная</button>
+            <button data-q="40">Солнечная</button>
+          </div>
+        </div>
+        <div class="ac-place">
+          💨 <b>Кондиционер</b> — перетащите его в 3D на нужную стену. Голубые стрелки показывают, куда будет дуть воздух.
+        </div>
+        <div class="calc-out">
+          <div class="calc-out-main">
+            <div>
+              <div class="co-lbl">Нужная мощность охлаждения</div>
+              <div class="co-kw"><span id="kw">2.4</span> <small>кВт</small></div>
+              <div class="co-btu">≈ <span id="btu">8 000</span> BTU/ч · площадь <span id="areaOut">16</span> м²</div>
+            </div>
+            <div class="co-class" id="cls">Класс «09»</div>
+          </div>
+          <div class="co-mdl" id="mdl">Подойдёт: Pioneer Artis, Daichi AIR, LG Evo Max</div>
+          <div class="rbtns">
+            <a href="#catalog" class="btn btn-primary">Подобрать модель</a>
+            <a href="tel:+375447611653" class="btn btn-ghost">Замер</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATALOG -->
+<section class="sec" id="catalog">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Каталог</div>
+      <h2>Кондиционеры <span class="accent-text">в наличии</span></h2>
+      <p>Инверторные и классические сплит-системы ведущих брендов. Цена за комплект. Ставим и <b>мульти-сплит</b> — один внешний блок на несколько комнат: подберём под запрос.</p>
+    </div>
+    <div class="filters reveal" id="filters">
+      <button class="active" data-f="all">Все</button>
+      <button data-f="Pioneer">Pioneer</button>
+      <button data-f="LG">LG</button>
+      <button data-f="Electrolux">Electrolux</button>
+      <button data-f="MDV">MDV</button>
+      <button data-f="Daichi">Daichi</button>
+    </div>
+    <div class="cat-grid" id="catgrid"></div>
+  </div>
+</section>
+
+<!-- HOW -->
+<section class="sec" id="how">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Как мы работаем</div>
+      <h2>От звонка до <span class="accent-text">прохлады</span> — 4 шага</h2>
+      <p>Обычно весь монтаж — за один день, около 3 часов на объекте. Аккуратно, чисто, с уборкой за собой.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+        <h3>Заявка</h3>
+        <p>Звоните или оставляете заявку на сайте. Подберём модель под ваш бюджет и площадь.</p>
+      </div>
+      <div class="step reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 3h20v14H2zM8 21h8M12 17v4"/></svg></div>
+        <h3>Бесплатный замер</h3>
+        <p>Специалист приезжает, оценивает помещение и согласовывает место установки.</p>
+      </div>
+      <div class="step reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14.7 6.3a5 5 0 00-6.4 6.4L3 18v3h3l5.3-5.3a5 5 0 006.4-6.4l-3 3-2.5-.5-.5-2.5 3-3z"/></svg></div>
+        <h3>Монтаж за 1 день</h3>
+        <p>Привозим и устанавливаем технику под ключ — обычно за один день, около 3 часов на объекте.</p>
+      </div>
+      <div class="step reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3>Документы и гарантия</h3>
+        <p>Оформляем договор, акт выполненных работ и гарантийный талон. Гарантия на монтаж — до 5 лет.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="sec">
+  <div class="container">
+    <div class="cta-banner reveal">
+      <h2>Готовы к прохладе этим летом?</h2>
+      <p>Оставьте заявку — перезвоним, бесплатно замерим и подберём кондиционер под ваш бюджет.</p>
+      <a href="tel:+375447611653" class="btn btn-primary" style="margin:0 auto">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#0a0a0b" stroke-width="2.2" stroke-linecap="round" style="width:18px;height:18px"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Позвонить: +375 44 761-16-53
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="sec" id="reviews">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Отзывы</div>
+      <h2>Нам <span class="accent-text">доверяют</span></h2>
+      <p>Более 800 довольных клиентов в Минске, Бресте и областях.</p>
+    </div>
+    <div class="rev-grid">
+      <div class="rev reveal">
+        <div class="stars">★★★★★</div>
+        <p>«Замерили бесплатно, привезли на следующий день и установили за пару часов. Всё чисто, аккуратно. Кондиционер работает тихо — очень доволен!»</p>
+        <div class="who"><div class="av">А</div><div><b>Андрей</b><span>Минск, Каменная Горка</span></div></div>
+      </div>
+      <div class="rev reveal">
+        <div class="stars">★★★★★</div>
+        <p>«Долго выбирала, ребята помогли подобрать модель под комнату 25 м². Цена оказалась ниже, чем в магазинах. Рекомендую!»</p>
+        <div class="who"><div class="av">М</div><div><b>Марина</b><span>Минск, Уручье</span></div></div>
+      </div>
+      <div class="rev reveal">
+        <div class="stars">★★★★★</div>
+        <p>«Отличный сервис от заявки до гарантии. Мастер всё объяснил, показал как пользоваться Wi-Fi управлением. Спасибо за работу!»</p>
+        <div class="who"><div class="av">С</div><div><b>Сергей</b><span>Минск, Малиновка</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ПОРТФОЛИО РАБОТ  (ЗАМЕНИ фото/цены/данные на свои реальные — данные в JS-массиве portfolio) -->
+<section class="sec" id="portfolio">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Наши работы</div>
+      <h2>Портфолио <span class="accent-text">выполненных монтажей</span></h2>
+      <p>Реальные объекты в Минске и области: что ставили, за сколько и как быстро.</p>
+    </div>
+    <div class="port-grid" id="portgrid"></div>
+  </div>
+</section>
+
+<!-- СТОИМОСТЬ МОНТАЖА -->
+<section class="sec" id="pricing">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Стоимость монтажа</div>
+      <h2>Монтаж <span class="accent-text">от 500 руб</span> — честно, без переплат</h2>
+      <p>Точную стоимость назовём после бесплатного замера — платите только за то, что реально нужно. Возможна рассрочка.</p>
+    </div>
+    <div class="price-wrap reveal">
+      <div class="price-main">
+        <div class="price-big">от 500 <span style="font-size:1.4rem;-webkit-text-fill-color:var(--mut);color:var(--mut)">руб</span></div>
+        <div class="price-sub">Стандартный монтаж настенного кондиционера. Точная цена — после бесплатного замера.</div>
+        <div class="price-badges">
+          <span>💳 Рассрочка / оплата частями</span>
+          <span>📄 Договор · акт · гарантийный талон</span>
+          <span>🛡 Гарантия на монтаж — до 5 лет</span>
+        </div>
+        <a href="#contacts" class="btn btn-primary">Заказать бесплатный замер</a>
+      </div>
+      <div class="price-factors">
+        <div class="pf-title">Что входит в стандартный монтаж:</div>
+        <ul>
+          <li>Установка внутреннего и наружного блоков</li>
+          <li>Трасса до 3 м — медные трубы, кабель, дренаж</li>
+          <li>Декоративный короб на трассу</li>
+          <li>Вакуумирование и пусконаладка</li>
+        </ul>
+        <div class="pf-note">Замер, выезд и расчёт — бесплатно. Сверх стандарта (длинная трасса, сложный доступ, демонтаж) — по прайсу, всё озвучим на замере.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ПРАЙС-ЛИСТ / ЛИД-МАГНИТ -->
+<section class="sec" id="pricelist">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Прайс-лист</div>
+      <h2>Цены на <span class="accent-text">оборудование</span></h2>
+      <p>Актуальные цены на популярные модели. Полную подборку под ваш объект пришлём в мессенджер.</p>
+    </div>
+    <div class="price-lead reveal">
+      <div class="pricetable-wrap">
+        <table class="pricetable">
+          <thead><tr><th>Модель</th><th style="text-align:right">Цена, руб.</th></tr></thead>
+          <tbody id="pricebody"></tbody>
+        </table>
+      </div>
+      <div class="pricelead-card">
+        <h3>Получить прайс и подборку</h3>
+        <p>Оставьте контакт — пришлём полный каталог с ценами под ваш бюджет и площадь. Или скачайте прайс прямо сейчас.</p>
+        <button type="button" class="btn-pdf" onclick="window.print()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="width:18px;height:18px"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>Скачать прайс (PDF)</button>
+        <form id="priceform">
+          <input type="text" name="name" placeholder="Ваше имя" required>
+          <input type="tel" name="phone" placeholder="Телефон / мессенджер" required>
+          <button type="submit" class="btn btn-primary" style="justify-content:center">Прислать полный каталог</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- КВИЗ -->
+<section class="sec" id="quiz">
+  <div class="container">
+    <div class="quiz-card reveal">
+      <div class="quiz-head">
+        <div class="eyebrow">Быстрый расчёт</div>
+        <h2>Узнайте цену и <span class="accent-text">скидку</span> за 30 секунд</h2>
+        <p>Ответьте на 2 вопроса — пришлём расчёт под вашу комнату и бонус на монтаж.</p>
+      </div>
+      <div class="quiz-progress"><span id="quizBar"></span></div>
+      <div class="quiz-body">
+        <div class="quiz-step" data-step="1">
+          <div class="quiz-q">1. Что будем охлаждать?</div>
+          <div class="quiz-opts">
+            <button data-v="Квартира">🏢 Квартиру</button>
+            <button data-v="Частный дом">🏠 Дом</button>
+            <button data-v="Офис">💼 Офис</button>
+            <button data-v="Другое">📦 Другое</button>
+          </div>
+        </div>
+        <div class="quiz-step" data-step="2" hidden>
+          <div class="quiz-q">2. Площадь помещения?</div>
+          <div class="quiz-opts">
+            <button data-v="до 20 м²">до 20 м²</button>
+            <button data-v="20–35 м²">20–35 м²</button>
+            <button data-v="35–50 м²">35–50 м²</button>
+            <button data-v="больше 50 м²">больше 50 м²</button>
+          </div>
+        </div>
+        <div class="quiz-step" data-step="3" hidden>
+          <div class="quiz-est" id="quizEst"></div>
+          <div class="quiz-q">Куда прислать точный расчёт и скидку?</div>
+          <form id="quizForm" class="quiz-form">
+            <input name="name" placeholder="Ваше имя" required>
+            <input name="phone" type="tel" placeholder="Телефон для связи" required>
+            <button class="btn btn-primary" type="submit">Получить расчёт + скидку</button>
+            <p class="quiz-note">Перезвоним в течение 15 минут. Скидку зафиксируем за вами.</p>
+          </form>
+        </div>
+        <div class="quiz-back"><button id="quizBack" hidden>← Назад</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec" id="faq">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Вопросы и ответы</div>
+      <h2>Отвечаем на <span class="accent-text">частые вопросы</span></h2>
+      <p>Всё, что обычно спрашивают перед заказом. Не нашли ответ — звоните, подскажем.</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <button class="faq-q">За сколько времени установите кондиционер?<span class="faq-ic">+</span></button>
+        <div class="faq-a"><p>Обычно монтаж занимает несколько часов и выполняется за один день после бесплатного замера. В большинстве случаев привозим и устанавливаем в удобное для вас время.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">Замер и доставка правда бесплатные?<span class="faq-ic">+</span></button>
+        <div class="faq-a"><p>Да. Замер помещения и доставка по Минску и области — бесплатно, без обязательств. Специалист подберёт оптимальную мощность именно под вашу комнату.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">Какая гарантия на оборудование и монтаж?<span class="faq-ic">+</span></button>
+        <div class="faq-a"><p>Гарантия до 5 лет — и на сам кондиционер, и на установку. Работаем официально и отвечаем за качество монтажа.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">Можно ли пользоваться зимой на обогрев?<span class="faq-ic">+</span></button>
+        <div class="faq-a"><p>Да. Инверторные модели греют весной и осенью как тепловой насос. Модели серии LOW работают на обогрев даже в мороз — до −25°C.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">Насколько шумно работает кондиционер?<span class="faq-ic">+</span></button>
+        <div class="faq-a"><p>Уровень шума внутреннего блока — от 27 дБ, это тише шёпота. Есть ночной режим, поэтому техника не мешает спать.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">Как понять, какая мощность мне нужна?<span class="faq-ic">+</span></button>
+        <div class="faq-a"><p>Воспользуйтесь нашим <a href="#calc" style="color:var(--accent)">калькулятором</a> — укажите размеры комнаты и получите нужную мощность и подходящую модель. А точное значение подтвердит специалист на бесплатном замере.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ГЕОГРАФИЯ / ГОРОДА -->
+<section class="sec" id="geo">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="eyebrow">География работы</div>
+      <h2>Кондиционеры в <span class="accent-text">Минске, Бресте и областях</span></h2>
+      <p>Продажа, доставка и установка кондиционеров в Минске, Бресте и городах Минской и Брестской областей. Замер и доставка — бесплатно.</p>
+    </div>
+    <div class="geo-wrap reveal">
+      <div class="geo-cities" id="geoCities"></div>
+      <div class="geo-note">
+        <h3>Вашего города нет в списке?</h3>
+        <p>Работаем по <span class="geo-hi">Минской и Брестской областям</span> — оставьте заявку и укажите город, перезвоним и рассчитаем выезд.</p>
+        <p>В Минске и Бресте — <span class="geo-hi">замер и доставка бесплатно</span>, монтаж обычно за один день.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTS -->
+<section class="sec" id="contacts">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Контакты</div>
+      <h2>Свяжитесь <span class="accent-text">с нами</span></h2>
+      <p>Ответим на вопросы, бесплатно замерим и рассчитаем стоимость под ключ.</p>
+    </div>
+    <div class="contact-wrap">
+      <div class="contact-card reveal">
+        <a href="tel:+375447611653" class="contact-item">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+          <div><div class="lbl">Телефон (A1)</div><div class="val">+375 44 761-16-53</div></div>
+        </a>
+        <a href="mailto:info@smartklimat.by" class="contact-item">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16v16H4zM4 6l8 6 8-6"/></svg></div>
+          <div><div class="lbl">Email</div><div class="val">info@smartklimat.by</div></div>
+        </a>
+        <div class="contact-item">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div><div class="lbl">Город</div><div class="val">Минск и область</div></div>
+        </div>
+        <div class="contact-item">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+          <div><div class="lbl">Режим работы</div><div class="val">Ежедневно 9:00 — 21:00</div></div>
+        </div>
+      </div>
+      <div class="contact-card reveal">
+        <form id="leadform">
+          <input type="text" name="name" placeholder="Ваше имя" required>
+          <input type="tel" name="phone" placeholder="Телефон для связи" required>
+          <select name="city" class="lead-city" id="leadCity" aria-label="Город">
+            <option value="" disabled selected>Ваш город (Минск и область)</option>
+          </select>
+          <textarea name="msg" placeholder="Комната, площадь, пожелания (необязательно)"></textarea>
+          <div class="msg-choice">
+            <span class="mc-lbl">Куда вам удобнее, чтобы мы ответили?</span>
+            <div class="msg-opts" id="msgOpts">
+              <button type="button" class="msg-opt active" data-pref="Звонок"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Звонок</button>
+              <button type="button" class="msg-opt" data-pref="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1012 2zm0 18a8 8 0 01-4.1-1.1l-.3-.2-2.8.7.7-2.7-.2-.3A8 8 0 1112 20zm4.5-6c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.5.1-.6.8-.8 1-.3.2-.5.1a6.5 6.5 0 01-1.9-1.2 7.3 7.3 0 01-1.4-1.7c-.1-.2 0-.4.1-.5l.4-.4.2-.4v-.4l-.8-1.9c-.2-.5-.4-.4-.5-.4h-.5a1 1 0 00-.7.3A2.8 2.8 0 006 8.9c0 1.7 1.2 3.3 1.4 3.5s2.4 3.7 5.8 5c.8.3 1.4.5 1.9.7.8.2 1.5.2 2.1.1s1.4-.6 1.6-1.1.2-1 .2-1.1z"/></svg>WhatsApp</button>
+              <button type="button" class="msg-opt" data-pref="Telegram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.3l-3 14.3c-.2 1-.8 1.2-1.7.8l-4.6-3.4-2.2 2.1c-.3.3-.5.5-1 .5l.3-4.7 8.6-7.8c.4-.3-.1-.5-.6-.2L6.5 12 2 10.6c-1-.3-1-1 .2-1.5l18.2-7c.8-.3 1.5.2 1.5 1.2z"/></svg>Telegram</button>
+              <button type="button" class="msg-opt" data-pref="Viber"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C7 2 3 5.4 3 9.7c0 2.3 1.2 4.4 3.1 5.8v3.3l2.9-1.7c.9.2 1.9.3 3 .3 5 0 9-3.4 9-7.7S17 2 12 2zm5 10.6c-.2.5-1 1-1.5 1.1-.4.1-.9.1-1.4-.1a11.6 11.6 0 01-1.5-.6 8.9 8.9 0 01-3.4-3.1c-.3-.4-.6-1-.6-1.6 0-.6.3-.9.5-1 .1-.2.3-.2.4-.2h.3c.1 0 .3 0 .4.3l.6 1.4c.1.1 0 .3 0 .4l-.3.3c-.1.1-.2.2-.1.4.1.2.5.9 1.1 1.4.7.6 1.3.8 1.5.9.2.1.3 0 .4-.1l.5-.6c.1-.2.3-.1.4-.1l1.3.6c.2.1.3.2.3.2.1.1.1.3 0 .6z"/></svg>Viber</button>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary" style="justify-content:center">Отправить заявку</button>
+          <p style="color:var(--mut);font-size:.82rem;text-align:center">Нажимая кнопку, вы соглашаетесь на обработку данных. Мы перезвоним в течение 15 минут.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <a href="#top" class="logo" style="margin-bottom:16px"><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="#0a0a0b" stroke-width="2.2" stroke-linecap="round"><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6L5.6 18.4"/></svg></span><span>SMART<span class="accent-text">KLIMAT</span></span></a>
+        <p style="max-width:340px">Продажа, доставка и установка кондиционеров в Берёзе. Замер и доставка бесплатно, гарантия до 5 лет.</p>
+      </div>
+      <div>
+        <h4>Разделы</h4>
+        <a href="#promos">Акции и скидки</a>
+        <a href="#catalog">Каталог</a>
+        <a href="#pricelist">Прайс-лист</a>
+        <a href="#portfolio">Наши работы</a>
+        <a href="#reviews">Отзывы</a>
+        <a href="kak-vybrat-konditsioner.html">Как выбрать кондиционер</a>
+        <a href="#contacts">Контакты</a>
+      </div>
+      <div>
+        <h4>Контакты</h4>
+        <a href="tel:+375447611653">+375 44 761-16-53</a>
+        <a href="mailto:info@smartklimat.by">info@smartklimat.by</a>
+        <p>Минск и область</p>
+        <p>Ежедневно 9:00 — 21:00</p>
+      </div>
+    </div>
+    <div class="foot-bottom">© 2026 SMARTKLIMAT.BY — Кондиционеры с установкой в Минске. Все права защищены.</div>
+  </div>
+</footer>
+
+<!-- ПЛАВАЮЩИЕ КНОПКИ СВЯЗИ -->
+<div class="float-stack">
+  <a href="https://wa.me/375447611653" target="_blank" rel="noopener" class="fbtn wa" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1012 2zm0 18a8 8 0 01-4.1-1.1l-.3-.2-2.8.7.7-2.7-.2-.3A8 8 0 1112 20zm4.5-6c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.5.1-.6.8-.8 1-.3.2-.5.1a6.5 6.5 0 01-1.9-1.2 7.3 7.3 0 01-1.4-1.7c-.1-.2 0-.4.1-.5l.4-.4.2-.4v-.4l-.8-1.9c-.2-.5-.4-.4-.5-.4h-.5a1 1 0 00-.7.3A2.8 2.8 0 006 8.9c0 1.7 1.2 3.3 1.4 3.5s2.4 3.7 5.8 5c.8.3 1.4.5 1.9.7.8.2 1.5.2 2.1.1s1.4-.6 1.6-1.1.2-1 .2-1.1z"/></svg>
+  </a>
+  <a href="viber://chat?number=%2B375447611653" class="fbtn vb" aria-label="Viber">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C7 2 3 5.4 3 9.7c0 2.3 1.2 4.4 3.1 5.8v3.3l2.9-1.7c.9.2 1.9.3 3 .3 5 0 9-3.4 9-7.7S17 2 12 2zm5 10.6c-.2.5-1 1-1.5 1.1-.4.1-.9.1-1.4-.1a11.6 11.6 0 01-1.5-.6 8.9 8.9 0 01-3.4-3.1c-.3-.4-.6-1-.6-1.6 0-.6.3-.9.5-1 .1-.2.3-.2.4-.2h.3c.1 0 .3 0 .4.3l.6 1.4c.1.1 0 .3 0 .4l-.3.3c-.1.1-.2.2-.1.4.1.2.5.9 1.1 1.4.7.6 1.3.8 1.5.9.2.1.3 0 .4-.1l.5-.6c.1-.2.3-.1.4-.1l1.3.6c.2.1.3.2.3.2.1.1.1.3 0 .6z"/></svg>
+  </a>
+  <a href="https://t.me/artur4ikk18" target="_blank" rel="noopener" class="fbtn tg" aria-label="Telegram">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.3l-3 14.3c-.2 1-.8 1.2-1.7.8l-4.6-3.4-2.2 2.1c-.3.3-.5.5-1 .5l.3-4.7 8.6-7.8c.4-.3-.1-.5-.6-.2L6.5 12 2 10.6c-1-.3-1-1 .2-1.5l18.2-7c.8-.3 1.5.2 1.5 1.2z"/></svg>
+  </a>
+  <a href="tel:+375447611653" class="fbtn call" aria-label="Позвонить">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+  </a>
+  <!-- На телефоне мессенджеры свёрнуты под эту кнопку, чтобы не закрывать текст -->
+  <button type="button" class="fab-toggle" id="fabToggle" aria-label="Другие способы связи" aria-expanded="false">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+  </button>
+</div>
+
+<!-- Печатный прайс-лист (виден только при печати / «Сохранить как PDF») -->
+<div class="pricesheet" id="pricesheet"></div>
+
+<script>
+/* ===== AC illustration ===== */
+function acSVG(temp){return `<svg class="ac-svg" viewBox="0 0 320 150" xmlns="http://www.w3.org/2000/svg">
+  <g stroke="#ffdc4e" stroke-width="3.5" stroke-linecap="round" fill="none">
+    <path class="flow" d="M84 96 q14 22 -8 38"/>
+    <path class="flow f2" d="M160 100 q16 22 -6 40"/>
+    <path class="flow f3" d="M236 96 q14 22 -8 38"/>
+  </g>
+  <rect x="16" y="16" width="288" height="74" rx="20" fill="url(#acg)"/>
+  <rect x="16" y="70" width="288" height="20" rx="10" fill="#f4f4f5"/>
+  <rect x="42" y="78" width="236" height="5" rx="2.5" fill="#a9bcd6"/>
+  <rect x="34" y="28" width="82" height="12" rx="6" fill="#ffdc4e" opacity=".9"/>
+  <rect x="246" y="27" width="44" height="19" rx="5" fill="#121214"/>
+  <text x="268" y="41" text-anchor="middle" fill="#ffdc4e" font-size="12" font-family="monospace">${temp||24}°</text>
+  <defs><linearGradient id="acg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#d7e3f1"/></linearGradient></defs>
+</svg>`}
+
+/* ===== Products ===== */
+const products=[
+  {brand:"MDV",name:"MDV Classic Inverter",model:"MDSC-07HRDN8 / MDOC-07HDN8",area:"до 20 м²",power:"2.05 кВт",feat:"Инвертор · R32",price:"1 800",img:"images/mdv-classic.png",desc:"Надёжная инверторная сплит-система для небольших комнат до 20 м². Плавно держит температуру, тихо работает, экологичный хладагент R32.",tags:["Инвертор","Хладагент R32","Тихий режим","Охлаждение и обогрев"]},
+  {brand:"Pioneer",name:"Pioneer Artis Inverter",model:"KFRI20LW / KORI20LW",area:"до 20 м²",power:"2.0 кВт",feat:"Wi-Fi · Cold Plasma",price:"2 100",img:"images/pioneer-artis.png",desc:"Инверторный кондиционер с Wi-Fi-управлением и очисткой воздуха Cold Plasma. Для спальни или кабинета до 20 м².",tags:["Wi-Fi управление","Cold Plasma — очистка","Инвертор","Ночной режим"]},
+  {brand:"Daichi",name:"Daichi AIR Inverter",model:"AIR25AVQS1R / AIR25FVS1R",area:"до 27 м²",power:"2.5 кВт",feat:"Инвертор · R32",price:"2 028",img:"images/daichi-air.png",desc:"Инверторная модель для комнат до 27 м². Экономичный компрессор и хладагент R32, ровное охлаждение без перепадов.",tags:["Инвертор","Хладагент R32","До 27 м²","Экономичность"]},
+  {brand:"Pioneer",name:"Pioneer Artis Inverter",model:"KFRI25LW / KORI25LW",area:"до 27 м²",power:"2.65 кВт",feat:"Wi-Fi · 3D-свинг · Ионизатор",price:"2 250",img:"images/pioneer-artis.png",desc:"Мощнее младшей версии: до 27 м², Wi-Fi, 3D-распределение потока и ионизация воздуха. Отлично для гостиной.",tags:["Wi-Fi управление","3D-свинг потока","Ионизатор","Инвертор"]},
+  {brand:"LG",name:"LG Evo Max",model:"DC07RH",area:"до 25 м²",power:"2.5 кВт",feat:"Dual Inverter · Wi-Fi",price:"2 580",img:"images/lg-evomax.png",desc:"Технология Dual Inverter: тихая работа, экономия энергии и быстрое охлаждение. Управление со смартфона по Wi-Fi.",tags:["Dual Inverter","Wi-Fi управление","Тихая работа","Энергоэффективность"]},
+  {brand:"Pioneer",name:"Pioneer Artis LOW Inverter",model:"обогрев до −25°C",area:"до 27 м²",power:"2.65 кВт",feat:"Зимний комплект · Wi-Fi",price:"request",img:"images/pioneer-artis.png",desc:"Зимняя версия с обогревом до −25 °C. Работает круглый год, Wi-Fi-управление. Точную цену назовём по запросу.",tags:["Обогрев до −25°C","Зимний комплект","Wi-Fi управление","Круглый год"]},
+  {brand:"Electrolux",name:"Electrolux Atrium DC Inverter",model:"серия Atrium",area:"до 25 м²",power:"2.6 кВт",feat:"DC Inverter · ионизация",price:"request",img:"",desc:"DC-инверторная сплит-система с ионизацией воздуха для комнат до 25 м². Точную цену назовём по запросу.",tags:["DC Inverter","Ионизация воздуха","До 25 м²"]},
+  {brand:"Electrolux",name:"Electrolux Portofino Super DC",model:"серия Portofino",area:"до 25 м²",power:"2.6 кВт",feat:"Super DC Inverter · Wi-Fi",price:"request",img:"",desc:"Super DC Inverter и Wi-Fi — тихая и экономичная работа. Точную цену назовём по запросу.",tags:["Super DC Inverter","Wi-Fi управление","Тихая работа"]},
+  {brand:"MDV",name:"MDV Integra Pro",model:"серия Integra Pro",area:"до 25 м²",power:"2.6 кВт",feat:"Инвертор · самоочистка",price:"request",img:"",desc:"Инвертор с функцией самоочистки — меньше пыли и запахов внутри блока. Для комнат до 25 м². Цена — по запросу.",tags:["Инвертор","Самоочистка","До 25 м²"]},
+  {brand:"LG",name:"LG Eco Smart",model:"серия Eco Smart",area:"до 25 м²",power:"2.5 кВт",feat:"Dual Inverter · эконом",price:"request",img:"",desc:"Экономичная модель на технологии Dual Inverter — оптимальна по соотношению цена/качество. Цена — по запросу.",tags:["Dual Inverter","Экономичность","До 25 м²"]}
+];
+// общие данные для окна товара
+const INSTALL_STEPS=[
+  {t:"Бесплатный замер",d:"Приедем, замерим комнату и подберём мощность"},
+  {t:"Доставка бесплатно",d:"Привезём кондиционер по Минску в удобное время"},
+  {t:"Монтаж под ключ",d:"Аккуратно установим — обычно за 1 день"},
+  {t:"Гарантия до 5 лет",d:"Проверим, запустим и оформим гарантию"}
+];
+const WORK_PHOTOS=[
+  {img:"images/work-office.jpg",cap:"Монтаж в офисе"},
+  {img:"images/work-hangar.jpg",cap:"Внешний блок на ангаре"},
+  {img:"images/work-outdoor.jpg",cap:"Аккуратная установка"}
+];
+
+const areaIcon='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 3h18v18H3zM3 9h18M9 21V9"/></svg>';
+const powIcon='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M13 2L3 14h9l-1 8 10-12h-9z"/></svg>';
+const featIcon='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7.4L12 17l-6.3 4.4L8 14 2 9.4h7.6z"/></svg>';
+
+function render(filter){
+  const grid=document.getElementById('catgrid');
+  grid.innerHTML='';
+  products.forEach((p,pi)=>{
+    if(filter!=='all'&&p.brand!==filter)return;
+    const priceHtml = p.price==='request'
+      ? '<div class="price request">Цена по запросу</div>'
+      : '<div class="price">'+p.price+' <small>руб.</small></div>';
+    const el=document.createElement('div');
+    el.className='card reveal in';
+    el.setAttribute('onclick','openProduct('+pi+')');
+    el.style.cursor='pointer';
+    const inner = p.img
+      ? `<img src="${p.img}" alt="Кондиционер ${p.name}" loading="lazy">`
+      : acSVG();
+    el.innerHTML=`
+      <div class="img${p.img?' photo':''}">
+        <span class="brand-tag">${p.brand}</span>
+        <span class="stock">✓ В наличии</span>
+        ${inner}
+        <span class="more-hint">Подробнее →</span>
+      </div>
+      <div class="body">
+        <h3>${p.name}</h3>
+        <div class="model">${p.model}</div>
+        <div class="specs">
+          <div class="row">${areaIcon}<span>${p.area}</span></div>
+          <div class="row">${powIcon}<span>Мощность: ${p.power}</span></div>
+          <div class="row">${featIcon}<span>${p.feat}</span></div>
+        </div>
+        <div class="price-row">
+          ${priceHtml}
+          <button type="button" class="buy" onclick="event.stopPropagation();quickOrder('${p.name.replace(/'/g,"\\'")} — ${p.model.replace(/'/g,"\\'")}')">Заказать в 1 клик</button>
+        </div>
+      </div>`;
+    grid.appendChild(el);
+  });
+}
+render('all');
+
+/* ===== Окно товара (открывается по клику на карточку) ===== */
+(function(){
+  const m=document.createElement('div');
+  m.id='prodModal';
+  m.innerHTML='<div class="pm-back"></div><div class="pm-inner" role="dialog" aria-modal="true"></div>';
+  document.body.appendChild(m);
+  m.querySelector('.pm-back').onclick=closeProduct;
+  document.addEventListener('keydown',e=>{ if(e.key==='Escape')closeProduct(); });
+})();
+function openProduct(i){
+  const p=products[i]; if(!p)return;
+  const esc=s=>String(s).replace(/'/g,"\\'");
+  const priceHtml = p.price==='request' ? '<span class="pm-req">Цена по запросу</span>' : p.price+' <small>руб.</small>';
+  const photo = p.img ? `<img src="${p.img}" alt="Кондиционер ${p.name}">` : acSVG();
+  const tags = (p.tags||[]).map(t=>`<span class="pm-tag">${t}</span>`).join('');
+  const steps = INSTALL_STEPS.map((s,k)=>`<div class="pm-step"><span class="pm-num">${k+1}</span><div><b>${s.t}</b><small>${s.d}</small></div></div>`).join('');
+  const works = WORK_PHOTOS.map(w=>`<figure class="pm-work"><img src="${w.img}" alt="${w.cap}" loading="lazy"><figcaption>${w.cap}</figcaption></figure>`).join('');
+  const orderArg = esc(p.name+' — '+p.model);
+  document.querySelector('#prodModal .pm-inner').innerHTML=`
+    <button class="pm-close" onclick="closeProduct()" aria-label="Закрыть">×</button>
+    <div class="pm-top">
+      <div class="pm-photo${p.img?' has':''}"><span class="pm-brand">${p.brand}</span>${photo}</div>
+      <div class="pm-info">
+        <h3>${p.name}</h3>
+        <div class="pm-model">${p.model}</div>
+        <div class="pm-price">${priceHtml}</div>
+        <p class="pm-desc">${p.desc||''}</p>
+        <div class="pm-tags">${tags}</div>
+        <div class="pm-specs">
+          <div><small>Площадь</small><b>${p.area}</b></div>
+          <div><small>Мощность</small><b>${p.power}</b></div>
+          <div><small>Тип</small><b>${p.feat}</b></div>
+          <div><small>Гарантия</small><b>до 5 лет</b></div>
+        </div>
+        <div class="pm-cta">
+          <button class="btn btn-primary" onclick="closeProduct();quickOrder('${orderArg}')">Заказать в 1 клик</button>
+          <a href="#contacts" class="btn btn-ghost" onclick="closeProduct()">Бесплатный замер</a>
+        </div>
+      </div>
+    </div>
+    <div class="pm-sect"><h4>Как мы устанавливаем</h4><div class="pm-steps">${steps}</div></div>
+    <div class="pm-sect"><h4>Примеры наших работ</h4><div class="pm-works">${works}</div></div>`;
+  document.getElementById('prodModal').classList.add('open');
+  document.body.style.overflow='hidden';
+  document.querySelector('#prodModal .pm-inner').scrollTop=0;
+}
+function closeProduct(){
+  document.getElementById('prodModal').classList.remove('open');
+  document.body.style.overflow='';
+}
+
+/* ===== Прайс-таблица на странице + печатный лист (PDF) ===== */
+(function(){
+  var body=document.getElementById('pricebody'), sheet=document.getElementById('pricesheet');
+  if(!body)return;
+  var rows='', prows='';
+  products.forEach(function(p){
+    var price = p.price==='request'
+      ? '<td class="pt-price req">по запросу</td>'
+      : '<td class="pt-price">'+p.price+'</td>';
+    rows+='<tr><td class="pt-name"><b>'+p.name+'</b><small>'+p.model+' · '+p.area+'</small></td>'+price+'</tr>';
+    prows+='<tr><td>'+p.name+'</td><td>'+p.model+'</td><td>'+p.area+'</td><td>'+(p.price==='request'?'по запросу':p.price+' руб.')+'</td></tr>';
+  });
+  body.innerHTML=rows;
+  if(sheet){
+    sheet.innerHTML='<h1>SMARTKLIMAT.BY — прайс-лист</h1>'+
+      '<div class="ps-sub">Кондиционеры с установкой в Минске · +375 44 761-16-53 · info@smartklimat.by</div>'+
+      '<table><thead><tr><th>Модель</th><th>Артикул</th><th>Площадь</th><th>Цена</th></tr></thead><tbody>'+prows+'</tbody></table>'+
+      '<div class="ps-foot">Цены на оборудование. Монтаж договорной — точная стоимость после бесплатного замера. Замер и доставка по Минску бесплатно, гарантия до 5 лет.</div>';
+  }
+})();
+
+/* ===== Форма «получить прайс / каталог» ===== */
+(function(){
+  var f=document.getElementById('priceform'); if(!f)return;
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var btn=f.querySelector('button[type=submit]'), orig=btn.textContent;
+    var name=f.querySelector('[name=name]').value, phone=f.querySelector('[name=phone]').value;
+    btn.disabled=true; btn.textContent='Отправляем…';
+    sendLead(name,phone,'📄 Запрос прайс-листа / полного каталога').then(function(ok){
+      if(ok){
+        btn.textContent='✓ Заявка принята!'; btn.style.background='linear-gradient(135deg,#22c55e,#16a34a)';
+        if(window.ym&&YM_ID!=="00000000")ym(YM_ID,'reachGoal','lead');
+        if(window.fbq&&FB_ID!=="PIXEL_ID")fbq('track','Lead');
+        setTimeout(function(){f.reset();btn.textContent=orig;btn.style.background='';btn.disabled=false;},3000);
+      }else{ btn.textContent='Ошибка — позвоните нам'; setTimeout(function(){btn.textContent=orig;btn.disabled=false;},3000); }
+    });
+  });
+})();
+
+/* ===== Портфолио работ (ЗАМЕНИ на реальные объекты: фото/цены/описания) ===== */
+var portfolio=[
+  {img:"images/work-office.jpg", title:"Офис — настенный Pioneer", badge:"Офис", tag1:"Оборудование: <b>Pioneer</b>", tag2:"Срок: <b>1 день</b>", desc:"Внутренний блок Pioneer в офисном помещении. Аккуратный монтаж под потолком, ровная трасса и скрытый дренаж."},
+  {img:"images/work-hangar.jpg", title:"Склад — внешний блок на высоте", badge:"Склад / ангар", tag1:"Тип: <b>коммерческий</b>", tag2:"Монтаж: <b>на кронштейне</b>", desc:"Наружный блок на арочной кровле склада: усиленный кронштейн, безопасный подъём, трасса убрана. Берёмся и за сложные объекты."},
+  {img:"images/work-outdoor.jpg", title:"Частный дом — Pioneer", badge:"Частный дом", tag1:"Оборудование: <b>Pioneer</b>", tag2:"Срок: <b>1 день</b>", desc:"Наружный блок Pioneer на фасаде загородного дома. Надёжное крепление и аккуратный вывод трассы."}
+];
+(function(){
+  var g=document.getElementById('portgrid'); if(!g)return;
+  portfolio.forEach(function(p){
+    var el=document.createElement('div'); el.className='port-card reveal in';
+    var img = p.img ? '<img src="'+p.img+'" alt="'+p.title+'" loading="lazy">' : '';
+    el.innerHTML='<div class="p-img">'+img+'<span class="p-price">'+p.badge+'</span></div>'+
+      '<div class="p-body"><h3>'+p.title+'</h3>'+
+      '<div class="port-meta"><span>'+p.tag1+'</span><span>'+p.tag2+'</span></div>'+
+      '<div class="p-desc">'+p.desc+'</div>'+
+      '<button type="button" class="p-order" onclick="quickOrder(\''+p.title.replace(/'/g,"\\'")+'\')">Хочу так же</button></div>';
+    g.appendChild(el);
+  });
+})();
+
+document.querySelectorAll('#filters button').forEach(b=>{
+  b.onclick=()=>{
+    document.querySelectorAll('#filters button').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');
+    render(b.dataset.f);
+  };
+});
+
+/* ===== Header scroll ===== */
+const header=document.getElementById('header');
+window.addEventListener('scroll',()=>header.classList.toggle('scrolled',window.scrollY>30));
+
+/* ===== Burger ===== */
+const burger=document.getElementById('burger');
+const navlinks=document.getElementById('navlinks');
+burger.onclick=()=>navlinks.classList.toggle('open');
+navlinks.querySelectorAll('a').forEach(a=>a.onclick=()=>navlinks.classList.remove('open'));
+
+/* ===== Reveal on scroll ===== */
+const io=new IntersectionObserver((es)=>{
+  es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
+},{threshold:.15});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* ===== Counters ===== */
+const cio=new IntersectionObserver((es)=>{
+  es.forEach(e=>{
+    if(!e.isIntersecting)return;
+    const el=e.target;
+    if(el.dataset.text){el.textContent=el.dataset.text;cio.unobserve(el);return;}
+    const target=+el.dataset.count;let cur=0;
+    const step=Math.max(1,Math.ceil(target/60));
+    const t=setInterval(()=>{cur+=step;if(cur>=target){cur=target;clearInterval(t)}el.textContent=cur+(target>=1000?'+':'');},22);
+    cio.unobserve(el);
+  });
+},{threshold:.5});
+document.querySelectorAll('[data-count]').forEach(el=>cio.observe(el));
+
+/* ===== Snow — убран по просьбе Артура ===== */
+
+/* Раскрытие мессенджеров на телефоне */
+(function(){
+  var fab=document.getElementById('fabToggle');
+  if(!fab)return;
+  var stack=fab.closest('.float-stack');
+  fab.addEventListener('click',function(){
+    var open=stack.classList.toggle('open');
+    fab.setAttribute('aria-expanded',open?'true':'false');
+  });
+})();
+
+/* ===== Calculator + interactive 3D room planner ===== */
+(function(){
+  const g=id=>document.getElementById(id);
+  const svg=g('room3d');
+  const VW=440,VH=340,C30=Math.cos(Math.PI/6),S30=Math.sin(Math.PI/6);
+
+  const state={L:4,W:4,H:3,rot:0,q:35,heat:true};
+  // мебель на полу: центр (x,y) в метрах; настенные: {wall:0..3,t:0..1}
+  const FLOOR={
+    sofa:{w:2.0,d:0.9,h:0.75,top:'#ff9f1c',side:'#2456a8',name:'Диван'},
+    bed:{w:2.0,d:1.6,h:0.55,top:'#8b5cf6',side:'#5f3aa8',name:'Кровать'},
+    table:{w:1.2,d:0.8,h:0.75,top:'#f59e0b',side:'#b8760a',name:'Стол'}
+  };
+  const WALLI={
+    window:{h:1.2,z0:0.95,len:1.4,fill:'rgba(150,225,255,.5)',stroke:'#8fd8ff',name:'Окно'},
+    door:{h:2.0,z0:0,len:0.95,fill:'rgba(255,159,28,.3)',stroke:'#6ea8ff',name:'Дверь'}
+  };
+  let objects=[
+    {type:'ac',wall:0,t:0.5},
+    {type:'sofa',x:1.2,y:2.9},
+    {type:'window',wall:1,t:0.5}
+  ];
+  let selected=0;
+  const view={sc:1,ox:0,oy:0,cx:2,cy:2,rot:0};
+
+  /* --- проекция с вращением вокруг центра пола --- */
+  function rotXY(x,y){
+    const dx=x-state.L/2, dy=y-state.W/2, c=Math.cos(state.rot), s=Math.sin(state.rot);
+    return [dx*c-dy*s+state.L/2, dx*s+dy*c+state.W/2];
+  }
+  function proj(x,y,z){
+    const r=rotXY(x,y);
+    const ix=(r[0]-r[1])*C30, iy=(r[0]+r[1])*S30-z;
+    return [ix,iy];
+  }
+  function computeView(){
+    const L=state.L,W=state.W,H=state.H;
+    const cs=[[0,0,0],[L,0,0],[L,W,0],[0,W,0],[0,0,H],[L,0,H],[L,W,H],[0,W,H]].map(p=>proj(p[0],p[1],p[2]));
+    const xs=cs.map(p=>p[0]),ys=cs.map(p=>p[1]);
+    const minX=Math.min.apply(0,xs),maxX=Math.max.apply(0,xs),minY=Math.min.apply(0,ys),maxY=Math.max.apply(0,ys);
+    const pad=58, sc=Math.min((VW-pad*2)/(maxX-minX),(VH-pad*2)/(maxY-minY));
+    view.sc=sc; view.ox=(VW-(maxX-minX)*sc)/2-minX*sc; view.oy=(VH-(maxY-minY)*sc)/2-minY*sc;
+    view.cx=state.L/2; view.cy=state.W/2; view.rot=state.rot;
+  }
+  function P(x,y,z){const p=proj(x,y,z);return[+(p[0]*view.sc+view.ox).toFixed(1),+(p[1]*view.sc+view.oy).toFixed(1)];}
+  const pl=pts=>pts.map(p=>p.join(',')).join(' ');
+  const depth=(x,y)=>{const r=rotXY(x,y);return r[0]+r[1];}
+
+  // экран -> координаты пола (обратная проекция, z=0)
+  function screenToFloor(sx,sy){
+    const ix=(sx-view.ox)/view.sc, iy=(sy-view.oy)/view.sc;
+    const rmry=ix/C30, rpry=iy/S30;
+    const rx=(rmry+rpry)/2, ry=(rpry-rmry)/2;
+    const dx=rx-state.L/2, dy=ry-state.W/2, c=Math.cos(-state.rot), s=Math.sin(-state.rot);
+    return [dx*c-dy*s+state.L/2, dx*s+dy*c+state.W/2];
+  }
+  function wallCorners(){const L=state.L,W=state.W;return[[0,0],[L,0],[L,W],[0,W]];}
+  function nearestWall(x,y){
+    const fc=wallCorners();let best=0,bt=0.5,bd=1e9;
+    for(let i=0;i<4;i++){
+      const a=fc[i],b=fc[(i+1)%4];
+      const abx=b[0]-a[0],aby=b[1]-a[1],len2=abx*abx+aby*aby;
+      let t=((x-a[0])*abx+(y-a[1])*aby)/len2; t=Math.max(0.06,Math.min(0.94,t));
+      const px=a[0]+abx*t,py=a[1]+aby*t,dd=(x-px)**2+(y-py)**2;
+      if(dd<bd){bd=dd;best=i;bt=t;}
+    }
+    return {wall:best,t:bt};
+  }
+
+  /* --- карта комфорта: поток кондиционера и «холодные» зоны на полу --- */
+  function acBeam(o){
+    const fc=wallCorners();const a=fc[o.wall],b=fc[(o.wall+1)%4];
+    const wl=Math.hypot(b[0]-a[0],b[1]-a[1]);
+    const mx=a[0]+(b[0]-a[0])*o.t, my=a[1]+(b[1]-a[1])*o.t;
+    let nx=-(b[1]-a[1])/wl, ny=(b[0]-a[0])/wl;
+    if((state.L/2-mx)*nx+(state.W/2-my)*ny<0){nx=-nx;ny=-ny;}
+    return {mx,my,nx,ny,reach:Math.min(state.L,state.W)*0.62};
+  }
+  function coldAt(px,py,beams){
+    let c=0;
+    for(const bm of beams){
+      const dx=px-bm.mx, dy=py-bm.my;
+      const fd=dx*bm.nx+dy*bm.ny;                 // вдоль потока
+      if(fd<=0.15) continue;
+      const ld=Math.abs(-dx*bm.ny+dy*bm.nx);      // вбок от оси
+      const R=Math.max(1.6,bm.reach*1.7);
+      const cone=0.5+fd*0.55;                     // конус расширяется
+      if(ld>cone) continue;
+      const along=Math.max(0,1-fd/R);
+      const lat=Math.max(0,1-ld/cone);
+      const drop=Math.min(1,fd/(R*0.22));         // под блоком слабее, в зоне падения быстро нарастает
+      const strength=Math.pow(along,0.7)*Math.pow(lat,1.3)*drop*1.7;
+      c=Math.max(c, strength);
+    }
+    return Math.min(1,c);
+  }
+
+  /* --- рисование одного объекта, возвращает {svg, depth} --- */
+  function drawFloorItem(o,idx){
+    const s=FLOOR[o.type];
+    const x=Math.max(s.w/2,Math.min(state.L-s.w/2,o.x));
+    const y=Math.max(s.d/2,Math.min(state.W-s.d/2,o.y));
+    const bx=[[x-s.w/2,y-s.d/2],[x+s.w/2,y-s.d/2],[x+s.w/2,y+s.d/2],[x-s.w/2,y+s.d/2]];
+    const bot=bx.map(p=>P(p[0],p[1],0)), top=bx.map(p=>P(p[0],p[1],s.h));
+    const faces=[];
+    for(let i=0;i<4;i++){const a=bx[i],b=bx[(i+1)%4];
+      faces.push({d:depth((a[0]+b[0])/2,(a[1]+b[1])/2),poly:[bot[i],bot[(i+1)%4],top[(i+1)%4],top[i]]});}
+    faces.sort((p,q)=>p.d-q.d);
+    const sel=idx===selected;
+    let out=`<g data-idx="${idx}">`;
+    faces.forEach(f=>out+=`<polygon points="${pl(f.poly)}" fill="${s.side}" fill-opacity=".92" stroke="#0f0f10" stroke-opacity=".3"/>`);
+    out+=`<polygon points="${pl(top)}" fill="${s.top}" stroke="${sel?'#ffdc4e':'#0f0f10'}" stroke-opacity="${sel?1:.35}" stroke-width="${sel?2.5:1}"/></g>`;
+    return {svg:out,depth:depth(x,y)+0.4};
+  }
+  function drawWallItem(o,idx){
+    const w=WALLI[o.type],fc=wallCorners();
+    const a=fc[o.wall],b=fc[(o.wall+1)%4];
+    const wl=Math.hypot(b[0]-a[0],b[1]-a[1]);
+    const half=(w.len/2)/wl;
+    const t1=Math.max(0,o.t-half),t2=Math.min(1,o.t+half);
+    const p1=[a[0]+(b[0]-a[0])*t1,a[1]+(b[1]-a[1])*t1];
+    const p2=[a[0]+(b[0]-a[0])*t2,a[1]+(b[1]-a[1])*t2];
+    const quad=[P(p1[0],p1[1],w.z0),P(p2[0],p2[1],w.z0),P(p2[0],p2[1],w.z0+w.h),P(p1[0],p1[1],w.z0+w.h)];
+    const sel=idx===selected;
+    const mx=(a[0]+(b[0]-a[0])*o.t),my=(a[1]+(b[1]-a[1])*o.t);
+    return {svg:`<g data-idx="${idx}"><polygon points="${pl(quad)}" fill="${w.fill}" stroke="${sel?'#ffdc4e':w.stroke}" stroke-width="${sel?2.5:1.5}"/></g>`,depth:depth(mx,my)-0.05};
+  }
+  function drawAC(o,idx){
+    const fc=wallCorners();const a=fc[o.wall],b=fc[(o.wall+1)%4];
+    const wl=Math.hypot(b[0]-a[0],b[1]-a[1]);const half=0.5/wl;
+    const t1=Math.max(0,o.t-half),t2=Math.min(1,o.t+half);
+    const z0=state.H*0.72,z1=state.H*0.9;
+    const p1=[a[0]+(b[0]-a[0])*t1,a[1]+(b[1]-a[1])*t1];
+    const p2=[a[0]+(b[0]-a[0])*t2,a[1]+(b[1]-a[1])*t2];
+    const quad=[P(p1[0],p1[1],z0),P(p2[0],p2[1],z0),P(p2[0],p2[1],z1),P(p1[0],p1[1],z1)];
+    // точка выхода воздуха + внутренняя нормаль
+    const mx=a[0]+(b[0]-a[0])*o.t,my=a[1]+(b[1]-a[1])*o.t;
+    let nx=-(b[1]-a[1])/wl,ny=(b[0]-a[0])/wl;
+    if((state.L/2-mx)*nx+(state.W/2-my)*ny<0){nx=-nx;ny=-ny;}
+    const reach=Math.min(state.L,state.W)*0.62;
+    const dir=[(b[0]-a[0])/wl,(b[1]-a[1])/wl];
+    let flow='';
+    [-0.28,0,0.28].forEach((off,k)=>{
+      let pts=[];
+      for(let s=0;s<=1.001;s+=0.25){
+        const fx=mx+nx*reach*s+dir[0]*off, fy=my+ny*reach*s+dir[1]*off;
+        const fz=z0*(1-0.8*s);
+        pts.push(P(fx,fy,fz));
+      }
+      flow+=`<polyline points="${pl(pts)}" fill="none" stroke="#ffdc4e" stroke-width="2.4" stroke-linecap="round" class="flow ${k===1?'f2':k===2?'f3':''}"/>`;
+      const e=pts[pts.length-1];flow+=`<circle cx="${e[0]}" cy="${e[1]}" r="2.6" fill="#ffdc4e"/>`;
+    });
+    const sel=idx===selected;
+    return {svg:`<g data-idx="${idx}">${flow}<polygon points="${pl(quad)}" fill="#ffffff" stroke="${sel?'#ffdc4e':'#cfe0f2'}" stroke-width="${sel?2.5:1.5}"/></g>`,depth:depth(mx,my)+0.5};
+  }
+
+  function render(){
+    computeView();
+    const L=state.L,W=state.W,H=state.H;
+    const fc=wallCorners();
+    const bot=fc.map(p=>P(p[0],p[1],0)), top=fc.map(p=>P(p[0],p[1],H));
+    // пол + сетка
+    let s=`<polygon points="${pl(bot)}" fill="rgba(255,220,78,.05)"/>`;
+    // карта комфорта: тёплые/холодные зоны от кондиционера
+    let draft=null;
+    if(state.heat){
+      const beams=objects.filter(o=>o.type==='ac').map(acBeam);
+      if(beams.length){
+        const cx=Math.max(6,Math.min(18,Math.round(L/0.55)));
+        const cy=Math.max(6,Math.min(18,Math.round(W/0.55)));
+        let hot=null;
+        for(let i=0;i<cx;i++)for(let j=0;j<cy;j++){
+          const x0=i/cx*L,x1=(i+1)/cx*L,y0=j/cy*W,y1=(j+1)/cy*W;
+          const mxp=(x0+x1)/2,myp=(y0+y1)/2;
+          const c=coldAt(mxp,myp,beams);
+          if(!hot||c>hot.c)hot={c,x:mxp,y:myp};
+          const warm=[255,132,66],cold=[96,182,255];
+          const col=warm.map((w,k)=>Math.round(w+(cold[k]-w)*c));
+          const q=[P(x0,y0,0.01),P(x1,y0,0.01),P(x1,y1,0.01),P(x0,y1,0.01)];
+          s+=`<polygon points="${pl(q)}" fill="rgb(${col.join(',')})" fill-opacity="${(0.2+0.65*c).toFixed(2)}" stroke="rgb(${col.join(',')})" stroke-opacity="${(0.12+0.35*c).toFixed(2)}" stroke-width="0.4"/>`;
+        }
+        if(hot&&hot.c>0.5)draft={x:hot.x,y:hot.y};
+      }
+    }
+    for(let i=1;i<Math.round(L);i++){const p=P(i,0,0),q=P(i,W,0);s+=`<line x1="${p[0]}" y1="${p[1]}" x2="${q[0]}" y2="${q[1]}" stroke="#ffdc4e" stroke-opacity=".08"/>`;}
+    for(let j=1;j<Math.round(W);j++){const p=P(0,j,0),q=P(L,j,0);s+=`<line x1="${p[0]}" y1="${p[1]}" x2="${q[0]}" y2="${q[1]}" stroke="#ffdc4e" stroke-opacity=".08"/>`;}
+    // 2 дальние стены (у самого дальнего угла) — заливка
+    const dsum=fc.map(p=>depth(p[0],p[1]));
+    let far=0;for(let i=1;i<4;i++)if(dsum[i]<dsum[far])far=i;
+    const backWalls=[(far+3)%4,far];
+    backWalls.forEach(wi=>{const a=wi,b=(wi+1)%4;
+      s+=`<polygon points="${pl([bot[a],bot[b],top[b],top[a]])}" fill="rgba(255,159,28,.10)" stroke="#ff9f1c" stroke-opacity=".3" stroke-width="1"/>`;});
+    // каркас (все рёбра)
+    for(let i=0;i<4;i++){const j=(i+1)%4;
+      s+=`<line x1="${bot[i][0]}" y1="${bot[i][1]}" x2="${bot[j][0]}" y2="${bot[j][1]}" stroke="#ffdc4e" stroke-opacity=".45" stroke-width="1.5"/>`;
+      s+=`<line x1="${top[i][0]}" y1="${top[i][1]}" x2="${top[j][0]}" y2="${top[j][1]}" stroke="#ffdc4e" stroke-opacity=".22"/>`;
+      s+=`<line x1="${bot[i][0]}" y1="${bot[i][1]}" x2="${top[i][0]}" y2="${top[i][1]}" stroke="#ffdc4e" stroke-opacity=".28"/>`;}
+    // объекты по глубине (дальние сначала)
+    const drawn=objects.map((o,idx)=>{
+      if(o.type==='ac')return drawAC(o,idx);
+      if(WALLI[o.type])return drawWallItem(o,idx);
+      return drawFloorItem(o,idx);
+    });
+    drawn.sort((a,b)=>a.depth-b.depth).forEach(d=>s+=d.svg);
+    // маркер и подпись «Сквозняк» — поверх всего
+    if(draft){
+      const hp=P(draft.x,draft.y,0.02);
+      const lx=hp[0],ly=hp[1]-30;
+      s+=`<g class="draft-mark">
+        <circle cx="${hp[0]}" cy="${hp[1]}" r="8" fill="none" stroke="#5aaaff" stroke-width="2"><animate attributeName="r" values="6;15;6" dur="1.9s" repeatCount="indefinite"/><animate attributeName="stroke-opacity" values="1;0;1" dur="1.9s" repeatCount="indefinite"/></circle>
+        <circle cx="${hp[0]}" cy="${hp[1]}" r="3" fill="#5aaaff"/>
+        <line x1="${hp[0]}" y1="${hp[1]-4}" x2="${lx}" y2="${ly+9}" stroke="#8cc6ff" stroke-width="1" stroke-opacity=".6"/>
+        <rect x="${lx-42}" y="${ly-11}" width="84" height="20" rx="10" fill="#0d1b30" stroke="#5aaaff" stroke-opacity=".7"/>
+        <text x="${lx}" y="${ly+3}" text-anchor="middle" fill="#bfe0ff" font-size="11" font-weight="700" font-family="-apple-system,Segoe UI,Arial">❄ Сквозняк</text>
+      </g>`;
+    }
+    svg.innerHTML=s;
+
+    // подписи / инфо
+    g('lV').textContent=L.toFixed(1);g('wV').textContent=W.toFixed(1);g('hV').textContent=H.toFixed(1);
+    g('dimsRead').textContent=`${L.toFixed(1)} × ${W.toFixed(1)} × ${H.toFixed(1)} м`;
+    const o=objects[selected];
+    const nm=o?(o.type==='ac'?'Кондиционер':(FLOOR[o.type]||WALLI[o.type]).name):'—';
+    g('selInfo').textContent='Выбрано: '+nm;
+    recompute();
+  }
+
+  function recompute(){
+    const L=state.L,W=state.W,H=state.H,vol=L*W*H;
+    g('areaOut').textContent=Math.round(L*W);
+    let kw=vol*state.q/1000;
+    const btu=Math.round(kw*3412/500)*500;
+    g('kw').textContent=kw.toFixed(1);
+    g('btu').textContent=btu.toLocaleString('ru-RU');
+    let cls,mdl;
+    if(kw<=2.15){cls='Класс «07»';mdl='Pioneer Artis KFRI20, MDV Classic Inverter';}
+    else if(kw<=2.8){cls='Класс «09»';mdl='Pioneer Artis KFRI25, Daichi AIR25, LG Evo Max';}
+    else if(kw<=3.6){cls='Класс «12»';mdl='MDV Integra Pro, Electrolux Atrium — уточните у менеджера';}
+    else if(kw<=5.4){cls='Класс «18»';mdl='Мощные модели — подберём под запрос';}
+    else{cls='Мультисплит';mdl='Несколько блоков — рассчитаем индивидуально';}
+    g('cls').textContent=cls;g('mdl').textContent='Подойдёт: '+mdl;
+  }
+
+  /* --- размеры --- */
+  ['L','W','H'].forEach(id=>g(id).oninput=()=>{state[id]=+g(id).value;render();});
+  document.querySelectorAll('#side button').forEach(b=>b.onclick=()=>{
+    document.querySelectorAll('#side button').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');state.q=+b.dataset.q;recompute();
+  });
+
+  /* --- палитра, поворот, удаление --- */
+  document.querySelectorAll('.pchip').forEach(b=>b.onclick=()=>{
+    const t=b.dataset.add;
+    if(WALLI[t])objects.push({type:t,wall:2,t:0.5});
+    else objects.push({type:t,x:state.L/2,y:state.W/2});
+    selected=objects.length-1;render();
+  });
+  g('rotL').onclick=()=>{state.rot-=Math.PI/12;render();};
+  g('rotR').onclick=()=>{state.rot+=Math.PI/12;render();};
+  g('resetView').onclick=()=>{state.rot=0;render();};
+  g('heatBtn').onclick=()=>{
+    state.heat=!state.heat;
+    g('heatBtn').classList.toggle('on',state.heat);
+    g('heatLegend').classList.toggle('off',!state.heat);
+    render();
+  };
+  g('delSel').onclick=()=>{
+    if(objects[selected]&&objects[selected].type!=='ac'){objects.splice(selected,1);selected=Math.min(selected,objects.length-1);render();}
+  };
+
+  /* --- drag: вращение фона или перемещение предмета --- */
+  let drag=null;
+  function toSvg(e){const r=svg.getBoundingClientRect();const cx=(e.touches?e.touches[0].clientX:e.clientX);const cy=(e.touches?e.touches[0].clientY:e.clientY);return[(cx-r.left)/r.width*VW,(cy-r.top)/r.height*VH,cx,cy];}
+  svg.addEventListener('pointerdown',e=>{
+    const grp=e.target.closest('[data-idx]');
+    const p=toSvg(e);
+    if(grp){selected=+grp.dataset.idx;drag={mode:'move',idx:selected};render();}
+    else{drag={mode:'rot',x0:p[2],rot0:state.rot};}
+  });
+  window.addEventListener('pointermove',e=>{
+    if(!drag)return;
+    const p=toSvg(e);
+    if(drag.mode==='rot'){state.rot=drag.rot0+(p[2]-drag.x0)*0.012;render();}
+    else{
+      const o=objects[drag.idx];if(!o)return;
+      const f=screenToFloor(p[0],p[1]);
+      if(o.type==='ac'||WALLI[o.type]){const nw=nearestWall(f[0],f[1]);o.wall=nw.wall;o.t=nw.t;}
+      else{o.x=Math.max(0,Math.min(state.L,f[0]));o.y=Math.max(0,Math.min(state.W,f[1]));}
+      render();
+    }
+  });
+  window.addEventListener('pointerup',()=>{drag=null;});
+
+  render();
+})();
+
+/* ===== FAQ аккордеон ===== */
+document.querySelectorAll('.faq-q').forEach(function(q){
+  q.onclick=function(){
+    var item=q.closest('.faq-item'), a=item.querySelector('.faq-a'), open=item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(function(i){i.classList.remove('open');i.querySelector('.faq-a').style.maxHeight=null;});
+    if(!open){item.classList.add('open');a.style.maxHeight=a.scrollHeight+'px';}
+  };
+});
+
+/* ===== Промо-бар (закрытие + отступ шапки под его высоту) ===== */
+(function(){
+  var promo=document.getElementById('promo'), header=document.getElementById('header');
+  function fit(){
+    if(document.body.classList.contains('no-promo')){header.style.top='0px';return;}
+    header.style.top=(promo.offsetHeight||40)+'px';
+  }
+  document.body.classList.add('no-promo'); // оранжевая плашка-акция убрана — сайт всегда без неё
+  var x=document.getElementById('promoX');
+  if(x)x.onclick=function(){document.body.classList.add('no-promo');sessionStorage.setItem('promo_closed','1');fit();};
+  fit();
+  window.addEventListener('resize',fit);
+})();
+
+/* ===== Аналитика — ВСТАВЬ СВОИ ID (инструкция в чате) ===== */
+var YM_ID="00000000";      // ← номер счётчика Яндекс.Метрики
+var FB_ID="PIXEL_ID";      // ← ID пикселя Meta (Facebook/Instagram)
+(function(){
+  if(YM_ID!=="00000000"){
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();
+    for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}
+    k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    (window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");
+    ym(YM_ID,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});
+  }
+  if(FB_ID!=="PIXEL_ID"){
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init',FB_ID);fbq('track','PageView');
+  }
+})();
+
+/* ===== Отправка заявки (Telegram + почта) — общая функция ===== */
+var LEAD_EMAIL="info@smartklimat.by";   // ← резервная почта для заявок
+var LEAD_PROXY="";   // ← БЕЗОПАСНЫЙ путь: адрес Cloudflare Worker (см. telegram-worker.js). Если заполнить — используется он, а токен ниже можно очистить.
+var TG_TOKEN="8873291880:AAFK7UnxyBChHO9pszZxKSIEa0nAAbISJDQ";   // прямая отправка (токен виден в коде — временный вариант до перехода на Worker)
+var TG_CHAT="1005745966";    // chat_id (Артур)
+function sendLead(name,phone,msg){
+  var jobs=[];
+  var tgText='🔔 Новая заявка — SMARTKLIMAT.BY\n\n👤 Имя: '+name+'\n📞 Телефон: '+phone+(msg?('\n💬 '+msg):'');
+  if(LEAD_PROXY){
+    // Заявка уходит на защищённый Worker-посредник, а он — в Telegram. Токен на сайте не хранится.
+    jobs.push(fetch(LEAD_PROXY,{
+      method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({name:name,phone:phone,msg:msg})
+    }));
+  }else if(TG_TOKEN&&TG_CHAT){
+    // Прямая отправка в Telegram (пока Worker не подключён).
+    jobs.push(fetch('https://api.telegram.org/bot'+TG_TOKEN+'/sendMessage',{
+      method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({chat_id:TG_CHAT,text:tgText})
+    }));
+  }
+  jobs.push(fetch('https://formsubmit.co/ajax/'+LEAD_EMAIL,{
+    method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
+    body:JSON.stringify({name:name,phone:phone,msg:msg,_subject:"🔔 Новая заявка с сайта SMARTKLIMAT.BY",_template:"table",_captcha:"false"})
+  }));
+  return Promise.allSettled(jobs).then(function(res){return res.some(function(r){return r.status==='fulfilled';});});
+}
+
+/* ===== Выбор мессенджера в форме ===== */
+/* ===== Города обслуживания (Минская и Брестская области) ===== */
+var CITIES=[
+  // Минск и Минская область
+  {n:"Минск",s:"minsk",loc:"Минске",r:"Минская область"},
+  {n:"Жодино",s:"zhodino",loc:"Жодино",r:"Минская область"},
+  {n:"Борисов",s:"borisov",loc:"Борисове",r:"Минская область"},
+  {n:"Солигорск",s:"soligorsk",loc:"Солигорске",r:"Минская область"},
+  {n:"Молодечно",s:"molodechno",loc:"Молодечно",r:"Минская область"},
+  {n:"Слуцк",s:"slutsk",loc:"Слуцке",r:"Минская область"},
+  {n:"Дзержинск",s:"dzerzhinsk",loc:"Дзержинске",r:"Минская область"},
+  {n:"Смолевичи",s:"smolevichi",loc:"Смолевичах",r:"Минская область"},
+  {n:"Заславль",s:"zaslavl",loc:"Заславле",r:"Минская область"},
+  {n:"Фаниполь",s:"fanipol",loc:"Фаниполе",r:"Минская область"},
+  {n:"Столбцы",s:"stolbtsy",loc:"Столбцах",r:"Минская область"},
+  {n:"Несвиж",s:"nesvizh",loc:"Несвиже",r:"Минская область"},
+  {n:"Вилейка",s:"vileyka",loc:"Вилейке",r:"Минская область"},
+  // Брест и Брестская область
+  {n:"Брест",s:"brest",loc:"Бресте",r:"Брестская область"},
+  {n:"Барановичи",s:"baranovichi",loc:"Барановичах",r:"Брестская область"},
+  {n:"Пинск",s:"pinsk",loc:"Пинске",r:"Брестская область"},
+  {n:"Кобрин",s:"kobrin",loc:"Кобрине",r:"Брестская область"},
+  {n:"Берёза",s:"bereza",loc:"Берёзе",r:"Брестская область"},
+  {n:"Жабинка",s:"zhabinka",loc:"Жабинке",r:"Брестская область"},
+  {n:"Дрогичин",s:"drogichin",loc:"Дрогичине",r:"Брестская область"},
+  {n:"Ивацевичи",s:"ivatsevichi",loc:"Ивацевичах",r:"Брестская область"},
+  {n:"Лунинец",s:"luninets",loc:"Лунинце",r:"Брестская область"},
+  {n:"Столин",s:"stolin",loc:"Столине",r:"Брестская область"},
+  {n:"Пружаны",s:"pruzhany",loc:"Пружанах",r:"Брестская область"}
+];
+(function(){
+  var cityHref=function(c){return c.s==='minsk'?'index.html':'city-'+c.s+'.html';};
+  // селект с группировкой по областям
+  var sel=document.getElementById('leadCity');
+  if(sel){
+    var regions=[];CITIES.forEach(function(c){if(regions.indexOf(c.r)<0)regions.push(c.r);});
+    regions.forEach(function(rg){
+      var g=document.createElement('optgroup');g.label=rg;
+      CITIES.filter(function(c){return c.r===rg;}).forEach(function(c){var o=document.createElement('option');o.value=c.n;o.textContent=c.n;g.appendChild(o);});
+      sel.appendChild(g);
+    });
+    if(window.__CITYPAGE){sel.value=window.__CITYPAGE;}
+  }
+  // ссылки-города, сгруппированы по областям
+  var box=document.getElementById('geoCities');
+  if(box){
+    var regions2=[];CITIES.forEach(function(c){if(regions2.indexOf(c.r)<0)regions2.push(c.r);});
+    box.innerHTML=regions2.map(function(rg){
+      var links=CITIES.filter(function(c){return c.r===rg;}).map(function(c){return '<a href="'+cityHref(c)+'">'+c.n+'</a>';}).join('');
+      return '<div class="geo-region"><h4>'+rg+'</h4><div class="geo-chips">'+links+'</div></div>';
+    }).join('');
+  }
+})();
+
+var leadPref='Звонок';
+(function(){
+  var box=document.getElementById('msgOpts'); if(!box)return;
+  box.querySelectorAll('.msg-opt').forEach(function(b){
+    b.onclick=function(){
+      box.querySelectorAll('.msg-opt').forEach(function(x){x.classList.remove('active');});
+      b.classList.add('active'); leadPref=b.dataset.pref;
+    };
+  });
+})();
+
+/* ===== «Заказать в 1 клик» — прокидывает модель в форму заявки ===== */
+function quickOrder(model){
+  var form=document.getElementById('leadform');
+  var ta=form.querySelector('[name=msg]');
+  ta.value='Хочу заказать: '+model;
+  document.getElementById('contacts').scrollIntoView({behavior:'smooth'});
+  setTimeout(function(){form.querySelector('[name=name]').focus();},600);
+  ta.style.borderColor='var(--accent)';
+  setTimeout(function(){ta.style.borderColor='';},2500);
+}
+
+/* ===== Форма заявки ===== */
+document.getElementById('leadform').addEventListener('submit',function(e){
+  e.preventDefault();
+  var form=this, btn=form.querySelector('button[type=submit]'), orig=btn.textContent;
+  var name=form.querySelector('[name=name]').value;
+  var phone=form.querySelector('[name=phone]').value;
+  var msg=form.querySelector('[name=msg]').value;
+  var cityEl=form.querySelector('[name=city]');
+  var city=cityEl?cityEl.value:'';
+  msg=(msg?msg+'\n':'')+'📲 Удобная связь: '+leadPref+(city?'\n🏙 Город: '+city:'');
+  btn.disabled=true; btn.textContent='Отправляем…'; btn.style.background='';
+  sendLead(name,phone,msg).then(function(ok){
+    if(ok){
+      btn.textContent='✓ Заявка отправлена!';
+      btn.style.background='linear-gradient(135deg,#22c55e,#16a34a)';
+      if(window.ym&&YM_ID!=="00000000")ym(YM_ID,'reachGoal','lead');
+      if(window.fbq&&FB_ID!=="PIXEL_ID")fbq('track','Lead');
+      setTimeout(function(){form.reset();btn.textContent=orig;btn.style.background='';btn.disabled=false;},3000);
+    }else{
+      btn.textContent='Ошибка — позвоните нам';
+      setTimeout(function(){btn.textContent=orig;btn.disabled=false;},3000);
+    }
+  });
+});
+
+/* ===== Квиз ===== */
+(function(){
+  var card=document.getElementById('quiz'); if(!card)return;
+  var answers={type:'',area:''}, step=1;
+  function show(n){
+    step=n;
+    card.querySelectorAll('.quiz-step').forEach(function(s){s.hidden=(+s.dataset.step!==n);});
+    card.querySelector('#quizBar').style.width=(n/3*100)+'%';
+    card.querySelector('#quizBack').hidden=(n===1);
+  }
+  card.querySelectorAll('.quiz-step[data-step="1"] .quiz-opts button').forEach(function(b){
+    b.onclick=function(){answers.type=b.dataset.v;show(2);};
+  });
+  var EST={
+    'до 20 м²':'Класс 07–09 · кондиционер от 1 800 руб + монтаж от 500 руб',
+    '20–35 м²':'Класс 09–12 · кондиционер от 2 100 руб + монтаж от 500 руб',
+    '35–50 м²':'Класс 12–18 · кондиционер от 2 600 руб + монтаж от 500 руб',
+    'больше 50 м²':'Мульти-сплит или мощные модели · рассчитаем индивидуально'
+  };
+  card.querySelectorAll('.quiz-step[data-step="2"] .quiz-opts button').forEach(function(b){
+    b.onclick=function(){
+      answers.area=b.dataset.v;
+      var est=EST[answers.area]||'Подберём оптимальную модель под вашу площадь';
+      card.querySelector('#quizEst').innerHTML='<div class="qe-lbl">Ваш предварительный расчёт</div><div class="qe-val">'+est+'</div><div class="qe-note">Точную цену и персональную скидку зафиксируем при звонке — оставьте контакт ниже.</div>';
+      show(3);
+    };
+  });
+  card.querySelector('#quizBack').onclick=function(){if(step>1)show(step-1);};
+  card.querySelector('#quizForm').addEventListener('submit',function(e){
+    e.preventDefault();
+    var f=this, btn=f.querySelector('button'), orig=btn.textContent;
+    var name=f.querySelector('[name=name]').value, phone=f.querySelector('[name=phone]').value;
+    var msg='Квиз: '+answers.type+', '+answers.area;
+    btn.disabled=true; btn.textContent='Отправляем…';
+    sendLead(name,phone,msg).then(function(ok){
+      if(ok){
+        if(window.ym&&YM_ID!=="00000000")ym(YM_ID,'reachGoal','lead');
+        if(window.fbq&&FB_ID!=="PIXEL_ID")fbq('track','Lead');
+        card.querySelector('.quiz-body').innerHTML='<div class="quiz-done">✓ Заявка принята!<span>Перезвоним в течение 15 минут и зафиксируем скидку.</span></div>';
+      }else{ btn.textContent='Ошибка — позвоните нам'; setTimeout(function(){btn.textContent=orig;btn.disabled=false;},3000); }
+    });
+  });
+  show(1);
+})();
+</script>
+<!-- Чат-помощник «Александр» (мозг на /api/bot, Gemini) -->
+<script src="chat.js" defer></script>
+</body>
+</html>
