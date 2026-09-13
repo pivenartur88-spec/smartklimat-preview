@@ -128,7 +128,7 @@ header.scrolled{
 }
 .logo .mark svg{width:24px;height:24px}
 .nav-links{display:flex;gap:26px;align-items:center;font-size:.95rem;font-weight:500}
-.nav-links a{color:var(--mut);transition:.2s;position:relative}
+.nav-links a{color:var(--mut);transition:.2s;position:relative;white-space:nowrap}
 .nav-links a:hover{color:var(--txt)}
 .nav-links a::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:2px;background:var(--accent);transition:.25s}
 .nav-links a:hover::after{width:100%}
@@ -296,7 +296,11 @@ section{position:relative;z-index:2}
 .tbtn{width:40px;height:40px;border-radius:12px;background:rgba(255,255,255,.05);border:1px solid var(--line);color:var(--txt);font-size:1.1rem;cursor:pointer;transition:.2s;display:grid;place-items:center}
 .tbtn:hover{background:var(--accent);color:#0a0a0b}
 .tbtn.danger:hover{background:#ef4444;color:#fff}
-.c3d-sel{flex:1;color:var(--mut);font-size:.85rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.c3d-sel{flex:1;min-width:0;color:var(--mut);font-size:.85rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.c3d-bar .tbtn{flex-shrink:0}
+/* «Выбрано: …» — отдельной строкой: в узкой колонке калькулятора текст наезжал на кнопку удаления */
+.c3d-bar{flex-wrap:wrap}
+.c3d-sel{order:10;flex-basis:100%}
 .palette{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
 .pal-lbl{color:var(--mut);font-size:.85rem;font-weight:600;margin-right:2px}
 .pchip{padding:9px 13px;border-radius:11px;background:rgba(255,255,255,.04);border:1px solid var(--line);color:var(--txt);font-weight:600;cursor:pointer;transition:.2s;font-size:.86rem}
@@ -406,7 +410,7 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
 .step p{color:var(--mut);font-size:.94rem}
 
 /* ===== Reviews ===== */
-.rev-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
+.rev-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:22px}
 .rev{background:linear-gradient(160deg,var(--card),var(--card2));border:1px solid var(--line);border-radius:var(--radius);padding:28px}
 .rev .stars{color:#ffca3a;margin-bottom:14px;letter-spacing:3px}
 .rev p{color:#d3ddee;margin-bottom:18px;font-size:.98rem}
@@ -456,16 +460,48 @@ footer{position:relative;z-index:2;border-top:1px solid var(--line);padding:50px
 .reveal.in{opacity:1;transform:none}
 
 /* mobile */
-@media(max-width:860px){
+/* меню из 8 пунктов не помещается уже на ~1000px (планшет горизонтально) — раньше уходим в бургер */
+@media(max-width:1080px){
   .nav-links{display:none}
   .nav-links.open{
     display:flex;flex-direction:column;position:absolute;top:70px;left:16px;right:16px;
     background:var(--bg2);border:1px solid var(--line);border-radius:18px;padding:22px;gap:18px;
   }
   .burger{display:flex}
+}
+@media(max-width:860px){
   .nav-phone span.txt{display:none}
-  .contact-wrap{grid-template-columns:1fr}
+  .contact-wrap{grid-template-columns:minmax(0,1fr)}
   .foot-grid{grid-template-columns:1fr;gap:22px}
+}
+
+/* ===== Ноутбук/планшет: меню в одну строку — номер телефона прячем в иконку ===== */
+@media(max-width:1180px){
+  .nav-links{gap:18px}
+  .nav-phone span.txt{display:none}
+}
+
+/* ===== Телефон (в том числе повёрнутый горизонтально): плавающие кнопки ===== */
+@media(max-width:600px),(max-height:500px){
+  /* плавающие кнопки мельче, чтобы не закрывали текст и кнопки */
+  .float-stack{right:12px;bottom:14px;gap:9px}
+  .fbtn{width:44px;height:44px}
+  .fbtn svg{width:21px;height:21px}
+  /* мессенджеры прячем под кнопку «+» — на экране остаются только «позвонить» и «ещё» */
+  .float-stack .fbtn.wa,.float-stack .fbtn.vb,.float-stack .fbtn.tg{display:none}
+  .float-stack.open .fbtn.wa,.float-stack.open .fbtn.vb,.float-stack.open .fbtn.tg{display:grid}
+  .fab-toggle{display:grid}
+}
+
+/* ===== Узкие телефоны (iPhone SE, 360px): шапка помещается целиком ===== */
+@media(max-width:400px){
+  .nav{gap:10px}
+  .logo{font-size:1.1rem;gap:8px}
+  .logo .mark{width:34px;height:34px;border-radius:10px}
+  .logo .mark svg{width:20px;height:20px}
+  .nav-phone{padding:9px 13px}
+  /* карточки контактов и формы: при 36px полей кнопки мессенджеров не влезали в 320px */
+  .contact-card{padding:24px 18px}
 }
 
 /* ===== Телефон: компактнее и без перекрытий ===== */
@@ -475,14 +511,6 @@ footer{position:relative;z-index:2;border-top:1px solid var(--line);padding:50px
   .stat{min-width:0;flex:1 1 calc(50% - 5px);padding:16px 10px;border-radius:14px}
   .stat .num{font-size:1.75rem}
   .stat .lbl{font-size:.8rem}
-  /* плавающие кнопки мельче, чтобы не закрывали текст и кнопки */
-  .float-stack{right:12px;bottom:14px;gap:9px}
-  .fbtn{width:44px;height:44px}
-  .fbtn svg{width:21px;height:21px}
-  /* мессенджеры прячем под кнопку «+» — на экране остаются только «позвонить» и «ещё» */
-  .float-stack .fbtn.wa,.float-stack .fbtn.vb,.float-stack .fbtn.tg{display:none}
-  .float-stack.open .fbtn.wa,.float-stack.open .fbtn.vb,.float-stack.open .fbtn.tg{display:grid}
-  .fab-toggle{display:grid}
   /* первый экран плотнее */
   .hero{padding-left:0;padding-right:0}
   body.no-promo .hero{padding-top:96px}
@@ -494,7 +522,7 @@ footer{position:relative;z-index:2;border-top:1px solid var(--line);padding:50px
 }
 
 /* ===== Акции и скидки ===== */
-.promo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
+.promo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:22px}
 .promo-card{position:relative;background:linear-gradient(160deg,var(--card),var(--card2));border:1px solid var(--line);border-radius:var(--radius);padding:28px 26px;display:flex;flex-direction:column;gap:12px;overflow:hidden;transition:.3s}
 .promo-card:hover{transform:translateY(-6px);border-color:rgba(255,220,78,.4);box-shadow:0 18px 50px rgba(0,0,0,.35)}
 .promo-card::before{content:"";position:absolute;right:-40px;top:-40px;width:150px;height:150px;background:radial-gradient(circle,rgba(255,220,78,.18),transparent 70%);pointer-events:none}
@@ -507,7 +535,7 @@ footer{position:relative;z-index:2;border-top:1px solid var(--line);padding:50px
 .promo-card .p-btn:hover{background:var(--accent);color:#0a0a0b}
 
 /* ===== Портфолио работ ===== */
-.port-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:22px}
+.port-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(320px,100%),1fr));gap:22px}
 .port-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;transition:.3s}
 .port-card:hover{transform:translateY(-6px);border-color:rgba(255,220,78,.4);box-shadow:0 18px 50px rgba(0,0,0,.35)}
 .port-card .p-img{position:relative;aspect-ratio:4/3;background:linear-gradient(160deg,#1f1f23,#121214);display:flex;align-items:center;justify-content:center;overflow:hidden}
@@ -570,7 +598,8 @@ footer{position:relative;z-index:2;border-top:1px solid var(--line);padding:50px
 /* ===== Карточка каталога: подсказка «Подробнее» ===== */
 .card{position:relative}
 .card .more-hint{position:absolute;left:12px;bottom:12px;background:rgba(10,10,11,.78);backdrop-filter:blur(6px);color:var(--accent);font-size:.8rem;font-weight:700;padding:6px 12px;border-radius:20px;border:1px solid rgba(255,220,78,.35);opacity:0;transform:translateY(6px);transition:.25s;pointer-events:none}
-.card:hover .more-hint{opacity:1;transform:none}
+/* только для мыши: на телефоне «наведение» залипает после касания и плашка висит поверх фото */
+@media(hover:hover){.card:hover .more-hint{opacity:1;transform:none}}
 
 /* ===== Окно товара ===== */
 #prodModal{position:fixed;inset:0;z-index:1000;display:none;align-items:flex-start;justify-content:center;padding:40px 16px}

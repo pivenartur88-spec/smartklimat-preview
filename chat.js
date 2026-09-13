@@ -61,10 +61,13 @@
     '.ak-in:focus{border-color:rgba(255,220,78,.5)}' +
     '.ak-send{width:42px;height:42px;flex:none;border:none;border-radius:50%;background:linear-gradient(135deg,#ffdc4e,#ff9f1c);color:#0a0a0b;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center}' +
     '.ak-hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}' +
-    '@media(max-width:600px){.ak-stage{left:10px;right:10px;width:auto;bottom:80px}' +
+    '@media(max-width:600px),(max-height:500px){.ak-stage{left:10px;right:10px;width:auto;bottom:80px}' +
     '.ak-bubble{width:50px;height:50px;left:14px;bottom:14px}.ak-bubble svg{width:26px;height:26px}' +
-    '.ak-hint{left:72px;bottom:22px;max-width:150px;font-size:12px;padding:8px 11px}' +
-    '.ak-win{height:min(72vh,470px)}}';
+    '.ak-win{height:min(72vh,470px)}' +
+    // на телефоне подсказка ложится поверх цифр и кнопок первого экрана — не показываем
+    '.ak-hint{display:none!important}}' +
+    // на планшетах тоже: подсказка ложится на фото первого экрана
+    '@media(hover:none){.ak-hint{display:none!important}}';
   document.head.appendChild(css);
 
   // ---- Кнопка-пузырь ----
