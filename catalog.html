@@ -1151,7 +1151,7 @@ function closeProduct(){
 /* ===== Прайс-таблица на странице + печатный лист (PDF) ===== */
 (function(){
   var body=document.getElementById('pricebody'), sheet=document.getElementById('pricesheet');
-  if(!body)return;
+  if(!body&&!sheet)return;
   var rows='', prows='';
   products.forEach(function(p){
     var price = p.price==='request'
@@ -1160,7 +1160,7 @@ function closeProduct(){
     rows+='<tr><td class="pt-name"><b>'+p.name+'</b><small>'+p.model+' · '+p.area+'</small></td>'+price+'</tr>';
     prows+='<tr><td>'+p.name+'</td><td>'+p.model+'</td><td>'+p.area+'</td><td>'+(p.price==='request'?'по запросу':p.price+' руб.')+'</td></tr>';
   });
-  body.innerHTML=rows;
+  if(body)body.innerHTML=rows;
   if(sheet){
     sheet.innerHTML='<h1>SMARTKLIMAT.BY — прайс-лист</h1>'+
       '<div class="ps-sub">Кондиционеры с установкой в Минске · +375 44 761-16-53 · info@smartklimat.by</div>'+
