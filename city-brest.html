@@ -222,7 +222,9 @@ section{position:relative;z-index:2}
   border:1px solid var(--line);color:var(--mut);font-weight:600;cursor:pointer;transition:.2s;font-size:.92rem;
 }
 .filters button.active,.filters button:hover{background:var(--accent);color:#0a0a0b;border-color:var(--accent)}
-.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:22px}
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(280px,100%),1fr));gap:22px}
+.cat-more{margin-top:28px;display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center}
+.cat-more span{color:var(--mut);font-size:.92rem}
 .card{
   background:linear-gradient(160deg,var(--card),var(--card2));
   border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
@@ -403,7 +405,6 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
 /* ===== Steps / How ===== */
 .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px;counter-reset:s}
 .step{background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:var(--radius);padding:30px 26px;position:relative}
-.step::before{counter-increment:s;content:"0" counter(s);position:absolute;top:20px;right:24px;font-size:2.6rem;font-weight:900;color:rgba(255,220,78,.15)}
 .step .ic{width:50px;height:50px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,rgba(255,220,78,.18),rgba(255,159,28,.18));color:var(--accent);margin-bottom:16px}
 .step .ic svg{width:26px;height:26px}
 .step h3{font-size:1.12rem;margin-bottom:6px}
@@ -474,6 +475,15 @@ footer{position:relative;z-index:2;border-top:1px solid var(--line);padding:50px
   .contact-wrap{grid-template-columns:minmax(0,1fr)}
   .foot-grid{grid-template-columns:1fr;gap:22px}
 }
+
+.swipe-nav{display:none;justify-content:flex-end;gap:10px;margin-top:12px}
+.swipe-nav button{
+  width:40px;height:40px;border-radius:50%;border:1px solid var(--line);
+  background:rgba(255,255,255,.05);color:var(--txt);font-size:18px;line-height:1;cursor:pointer;
+  display:grid;place-items:center;transition:.2s
+}
+.swipe-nav button.on{border-color:var(--accent);color:var(--accent);box-shadow:0 0 14px rgba(255,220,78,.25)}
+.swipe-nav button[disabled]{opacity:.3;cursor:default;box-shadow:none}
 
 /* ===== Ноутбук/планшет: меню в одну строку — номер телефона прячем в иконку ===== */
 @media(max-width:1180px){
@@ -601,6 +611,21 @@ footer{position:relative;z-index:2;border-top:1px solid var(--line);padding:50px
 /* только для мыши: на телефоне «наведение» залипает после касания и плашка висит поверх фото */
 @media(hover:hover){.card:hover .more-hint{opacity:1;transform:none}}
 
+/* ===== Короткая заявка (окно) ===== */
+#qlModal{position:fixed;inset:0;z-index:1001;display:none;align-items:center;justify-content:center;padding:18px}
+#qlModal.open{display:flex}
+#qlModal .ql-back{position:fixed;inset:0;background:rgba(6,6,7,.72);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+#qlModal .ql-inner{position:relative;z-index:1;width:100%;max-width:420px;background:var(--bg2);border:1px solid var(--line);border-radius:22px;padding:26px 24px;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+#qlModal h3{font-size:1.25rem;font-weight:900;margin-bottom:6px}
+#qlModal .ql-src{color:var(--accent);font-size:.9rem;font-weight:700;margin-bottom:14px}
+#qlModal .ql-note{color:var(--mut);font-size:.9rem;margin-bottom:16px}
+#qlModal input{width:100%;padding:14px 16px;margin-bottom:10px;border-radius:14px;background:rgba(255,255,255,.04);border:1px solid var(--line);color:var(--txt);font-size:1rem;font-family:inherit}
+#qlModal input:focus{outline:none;border-color:var(--accent)}
+#qlModal .btn{width:100%;justify-content:center;margin-top:6px}
+#qlModal .ql-close{position:absolute;top:12px;right:12px;width:36px;height:36px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--txt);font-size:20px;line-height:1;cursor:pointer}
+#qlModal .ql-phone{display:block;text-align:center;margin-top:14px;color:var(--mut);font-size:.9rem}
+#qlModal .ql-phone b{color:var(--txt)}
+
 /* ===== Окно товара ===== */
 #prodModal{position:fixed;inset:0;z-index:1000;display:none;align-items:flex-start;justify-content:center;padding:40px 16px}
 #prodModal.open{display:flex}
@@ -664,6 +689,23 @@ footer{position:relative;z-index:2;border-top:1px solid var(--line);padding:50px
 .geo-note p{color:var(--mut);font-size:.95rem;margin-bottom:8px}
 .geo-note .geo-hi{color:var(--accent);font-weight:700}
 @media(max-width:760px){.geo-wrap{grid-template-columns:1fr}}
+/* ===== Телефон/планшет: карточки листаются вбок, а не тянутся списком ===== */
+@media(max-width:860px){
+  .promo-grid,.cat-grid,.rev-grid,.port-grid,.adv-grid{
+    display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;scrollbar-width:none;padding:2px 2px 8px;
+    scroll-padding-left:2px;
+  }
+  .promo-grid::-webkit-scrollbar,.cat-grid::-webkit-scrollbar,.rev-grid::-webkit-scrollbar,
+  .port-grid::-webkit-scrollbar,.adv-grid::-webkit-scrollbar{display:none}
+  .promo-grid>*,.cat-grid>*,.rev-grid>*,.port-grid>*,.adv-grid>*{
+    flex:0 0 86%;scroll-snap-align:center;min-width:0;
+  }
+  .adv-grid>*{flex-basis:78%}
+  /* стрелки — по центру, чтобы не попадали под плавающие кнопки мессенджеров */
+  .swipe-nav{display:flex;justify-content:center;gap:16px}
+}
+
 </style>
 <link rel="canonical" href="city-brest.html">
 </head>
@@ -690,8 +732,7 @@ footer{position:relative;z-index:2;border-top:1px solid var(--line);padding:50px
     <nav class="nav-links" id="navlinks">
       <a href="#promos">Акции</a>
       <a href="#calc">Калькулятор</a>
-      <a href="#catalog">Каталог</a>
-      <a href="#pricelist">Прайс</a>
+      <a href="catalog.html">Каталог</a>
       <a href="#portfolio">Работы</a>
       <a href="#faq">Вопросы</a>
       <a href="kak-vybrat-konditsioner.html">Как выбрать</a>
@@ -732,7 +773,98 @@ footer{position:relative;z-index:2;border-top:1px solid var(--line);padding:50px
   </div>
 </section>
 
-<!-- ADVANTAGES -->
+<section class="sec" id="promos">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Акции и скидки</div>
+      <h2>Выгодные <span class="accent-text">предложения</span></h2>
+      <p>Успейте оформить заявку на действующих условиях — количество ограничено.</p>
+    </div>
+    <div class="promo-grid">
+      <div class="promo-card reveal">
+        <span class="p-badge">Хит сезона</span>
+        <div class="p-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14.7 6.3a5 5 0 00-6.4 6.4L3 18v3h3l5.3-5.3a5 5 0 006.4-6.4l-3 3-2.5-.5-.5-2.5 3-3z"/></svg></div>
+        <h3>Монтаж со скидкой 20%</h3>
+        <p>При покупке кондиционера у нас — стандартный монтаж со скидкой 20%. Замер и доставка бесплатно.</p>
+        <button type="button" class="p-btn" onclick="quickOrder('Акция: монтаж со скидкой 20%')">Участвовать</button>
+      </div>
+      <div class="promo-card reveal">
+        <span class="p-badge">Выгода</span>
+        <div class="p-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 12v9H4v-9M2 7h20v5H2zM12 22V7M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z"/></svg></div>
+        <h3>Второй блок — дешевле</h3>
+        <p>Ставите два кондиционера в одной квартире? На второй внутренний блок — специальная цена.</p>
+        <button type="button" class="p-btn" onclick="quickOrder('Акция: второй блок дешевле')">Участвовать</button>
+      </div>
+      <div class="promo-card reveal">
+        <span class="p-badge">Для новосёлов</span>
+        <div class="p-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M9 22V12h6v10"/></svg></div>
+        <h3>Скидка новосёлам</h3>
+        <p>Купили квартиру в новостройке? Покажите документы на жильё и получите дополнительную скидку.</p>
+        <button type="button" class="p-btn" onclick="quickOrder('Акция: скидка новосёлам')">Участвовать</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="quiz">
+  <div class="container">
+    <div class="quiz-card reveal">
+      <div class="quiz-head">
+        <div class="eyebrow">Быстрый расчёт</div>
+        <h2>Узнайте цену и <span class="accent-text">скидку</span> за 30 секунд</h2>
+        <p>Ответьте на 2 вопроса — пришлём расчёт под вашу комнату и бонус на монтаж.</p>
+      </div>
+      <div class="quiz-progress"><span id="quizBar"></span></div>
+      <div class="quiz-body">
+        <div class="quiz-step" data-step="1">
+          <div class="quiz-q">1. Что будем охлаждать?</div>
+          <div class="quiz-opts">
+            <button data-v="Квартира">🏢 Квартиру</button>
+            <button data-v="Частный дом">🏠 Дом</button>
+            <button data-v="Офис">💼 Офис</button>
+            <button data-v="Другое">📦 Другое</button>
+          </div>
+        </div>
+        <div class="quiz-step" data-step="2" hidden>
+          <div class="quiz-q">2. Площадь помещения?</div>
+          <div class="quiz-opts">
+            <button data-v="до 20 м²">до 20 м²</button>
+            <button data-v="20–35 м²">20–35 м²</button>
+            <button data-v="35–50 м²">35–50 м²</button>
+            <button data-v="больше 50 м²">больше 50 м²</button>
+          </div>
+        </div>
+        <div class="quiz-step" data-step="3" hidden>
+          <div class="quiz-est" id="quizEst"></div>
+          <div class="quiz-q">Куда прислать точный расчёт и скидку?</div>
+          <form id="quizForm" class="quiz-form">
+            <input name="name" placeholder="Ваше имя" required>
+            <input name="phone" type="tel" placeholder="Телефон для связи" required>
+            <button class="btn btn-primary" type="submit">Получить расчёт + скидку</button>
+            <p class="quiz-note">Перезвоним в течение 15 минут. Скидку зафиксируем за вами.</p>
+          </form>
+        </div>
+        <div class="quiz-back"><button id="quizBack" hidden>← Назад</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="catalog">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Популярные модели</div>
+      <h2>Три модели, которые <span class="accent-text">берут чаще всего</span></h2>
+      <p>Инверторные и классические сплит-системы ведущих брендов. Цена за комплект. Ставим и <b>мульти-сплит</b> — один внешний блок на несколько комнат: подберём под запрос.</p>
+    </div>
+    <div class="cat-grid" id="catgrid" data-top="1"></div>
+    <div class="cat-more reveal">
+      <a href="catalog.html" class="btn btn-ghost">Смотреть весь каталог →</a>
+      <span>Больше моделей, фильтры по брендам и мульти-сплит</span>
+    </div>
+  </div>
+</section>
+
 <section class="sec" id="advantages">
   <div class="container">
     <div class="sec-head reveal">
@@ -818,8 +950,9 @@ footer{position:relative;z-index:2;border-top:1px solid var(--line);padding:50px
       </div>
     </div>
 
-    <div class="adv-group reveal" id="usecases"><span>Под какую комнату</span></div>
-    <div class="steps">
+    <!-- Блок «Под какую комнату» отключён по разбору с Андреем 19.09.2026: дублирует калькулятор. Не удалять. -->
+    <div class="adv-group reveal" id="usecases" hidden><span>Под какую комнату</span></div>
+    <div class="steps" hidden>
       <div class="step reveal">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 21V9l9-6 9 6v12M9 21v-6h6v6"/></svg></div>
         <h3>Спальня и детская</h3>
@@ -844,41 +977,144 @@ footer{position:relative;z-index:2;border-top:1px solid var(--line);padding:50px
   </div>
 </section>
 
-<!-- АКЦИИ И СКИДКИ (перенесены под объединённый блок преимуществ) -->
-<section class="sec" id="promos" style="padding-top:0">
+<section class="sec" id="how">
   <div class="container">
     <div class="sec-head reveal">
-      <div class="eyebrow">Акции и скидки</div>
-      <h2>Выгодные <span class="accent-text">предложения</span></h2>
-      <p>Успейте оформить заявку на действующих условиях — количество ограничено.</p>
+      <div class="eyebrow">Как мы работаем</div>
+      <h2>От звонка до <span class="accent-text">комфорта</span> — 4 шага</h2>
+      <p>Обычно весь монтаж — за один день, около 3 часов на объекте. Аккуратно, чисто, с уборкой за собой.</p>
     </div>
-    <div class="promo-grid">
-      <div class="promo-card reveal">
-        <span class="p-badge">Хит сезона</span>
-        <div class="p-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14.7 6.3a5 5 0 00-6.4 6.4L3 18v3h3l5.3-5.3a5 5 0 006.4-6.4l-3 3-2.5-.5-.5-2.5 3-3z"/></svg></div>
-        <h3>Монтаж со скидкой 20%</h3>
-        <p>При покупке кондиционера у нас — стандартный монтаж со скидкой 20%. Замер и доставка бесплатно.</p>
-        <button type="button" class="p-btn" onclick="quickOrder('Акция: монтаж со скидкой 20%')">Участвовать</button>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+        <h3>Заявка</h3>
+        <p>Звоните или оставляете заявку на сайте. Подберём модель под ваш бюджет и площадь.</p>
       </div>
-      <div class="promo-card reveal">
-        <span class="p-badge">Выгода</span>
-        <div class="p-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 12v9H4v-9M2 7h20v5H2zM12 22V7M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z"/></svg></div>
-        <h3>Второй блок — дешевле</h3>
-        <p>Ставите два кондиционера в одной квартире? На второй внутренний блок — специальная цена.</p>
-        <button type="button" class="p-btn" onclick="quickOrder('Акция: второй блок дешевле')">Участвовать</button>
+      <div class="step reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 3h20v14H2zM8 21h8M12 17v4"/></svg></div>
+        <h3>Бесплатный замер</h3>
+        <p>Специалист приезжает, оценивает помещение и согласовывает место установки.</p>
       </div>
-      <div class="promo-card reveal">
-        <span class="p-badge">Для новосёлов</span>
-        <div class="p-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M9 22V12h6v10"/></svg></div>
-        <h3>Скидка новосёлам</h3>
-        <p>Купили квартиру в новостройке? Покажите документы на жильё и получите дополнительную скидку.</p>
-        <button type="button" class="p-btn" onclick="quickOrder('Акция: скидка новосёлам')">Участвовать</button>
+      <div class="step reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14.7 6.3a5 5 0 00-6.4 6.4L3 18v3h3l5.3-5.3a5 5 0 006.4-6.4l-3 3-2.5-.5-.5-2.5 3-3z"/></svg></div>
+        <h3>Монтаж за 1 день</h3>
+        <p>Привозим и устанавливаем технику под ключ — обычно за один день, около 3 часов на объекте.</p>
+      </div>
+      <div class="step reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3>Документы и гарантия</h3>
+        <p>Оформляем договор, акт выполненных работ и гарантийный талон. Гарантия на монтаж — до 5 лет.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- КАЛЬКУЛЯТОР -->
+<section class="sec" id="faq">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Вопросы и ответы</div>
+      <h2>Отвечаем на <span class="accent-text">частые вопросы</span></h2>
+      <p>Всё, что обычно спрашивают перед заказом. Не нашли ответ — звоните, подскажем.</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <button class="faq-q">За сколько времени установите кондиционер?<span class="faq-ic">+</span></button>
+        <div class="faq-a"><p>Обычно монтаж занимает несколько часов и выполняется за один день после бесплатного замера. В большинстве случаев привозим и устанавливаем в удобное для вас время.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">Замер и доставка правда бесплатные?<span class="faq-ic">+</span></button>
+        <div class="faq-a"><p>Да. Замер помещения и доставка по Минску и области — бесплатно, без обязательств. Специалист подберёт оптимальную мощность именно под вашу комнату.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">Какая гарантия на оборудование и монтаж?<span class="faq-ic">+</span></button>
+        <div class="faq-a"><p>Гарантия до 5 лет — и на сам кондиционер, и на установку. Работаем официально и отвечаем за качество монтажа.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">Можно ли пользоваться зимой на обогрев?<span class="faq-ic">+</span></button>
+        <div class="faq-a"><p>Да. Инверторные модели греют весной и осенью как тепловой насос. Модели серии LOW работают на обогрев даже в мороз — до −25°C.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">Насколько шумно работает кондиционер?<span class="faq-ic">+</span></button>
+        <div class="faq-a"><p>Уровень шума внутреннего блока — от 27 дБ, это тише шёпота. Есть ночной режим, поэтому техника не мешает спать.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">Как понять, какая мощность мне нужна?<span class="faq-ic">+</span></button>
+        <div class="faq-a"><p>Воспользуйтесь нашим <a href="#calc" style="color:var(--accent)">калькулятором</a> — укажите размеры комнаты и получите нужную мощность и подходящую модель. А точное значение подтвердит специалист на бесплатном замере.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="reviews">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Отзывы</div>
+      <h2>Нам <span class="accent-text">доверяют</span></h2>
+      <p>Более 800 довольных клиентов в Минске, Бресте и областях.</p>
+    </div>
+    <div class="rev-grid">
+      <div class="rev reveal">
+        <div class="stars">★★★★★</div>
+        <p>«Замерили бесплатно, привезли на следующий день и установили за пару часов. Всё чисто, аккуратно. Кондиционер работает тихо — очень доволен!»</p>
+        <div class="who"><div class="av">А</div><div><b>Андрей</b><span>Минск, Каменная Горка</span></div></div>
+      </div>
+      <div class="rev reveal">
+        <div class="stars">★★★★★</div>
+        <p>«Долго выбирала, ребята помогли подобрать модель под комнату 25 м². Цена оказалась ниже, чем в магазинах. Рекомендую!»</p>
+        <div class="who"><div class="av">М</div><div><b>Марина</b><span>Минск, Уручье</span></div></div>
+      </div>
+      <div class="rev reveal">
+        <div class="stars">★★★★★</div>
+        <p>«Отличный сервис от заявки до гарантии. Мастер всё объяснил, показал как пользоваться Wi-Fi управлением. Спасибо за работу!»</p>
+        <div class="who"><div class="av">С</div><div><b>Сергей</b><span>Минск, Малиновка</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="portfolio">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Наши работы</div>
+      <h2>Портфолио <span class="accent-text">выполненных монтажей</span></h2>
+      <p>Реальные объекты в Минске и области: что ставили, за сколько и как быстро.</p>
+    </div>
+    <div class="port-grid" id="portgrid"></div>
+  </div>
+</section>
+
+<section class="sec" id="pricing">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Стоимость монтажа</div>
+      <h2>Монтаж <span class="accent-text">от 500 руб</span> — честно, без переплат</h2>
+      <p>Точную стоимость назовём после бесплатного замера — платите только за то, что реально нужно. Возможна рассрочка.</p>
+    </div>
+    <div class="price-wrap reveal">
+      <div class="price-main">
+        <div class="price-big">от 500 <span style="font-size:1.4rem;-webkit-text-fill-color:var(--mut);color:var(--mut)">руб</span></div>
+        <div class="price-sub">Стандартный монтаж настенного кондиционера. Точная цена — после бесплатного замера.</div>
+        <div class="price-badges">
+          <span>💳 Рассрочка / оплата частями</span>
+          <span>📄 Договор · акт · гарантийный талон</span>
+          <span>🛡 Гарантия на монтаж — до 5 лет</span>
+        </div>
+        <button type="button" class="btn btn-primary" onclick="quickOrder('Монтаж — бесплатный замер')">Заказать бесплатный замер</button>
+      </div>
+      <div class="price-factors">
+        <div class="pf-title">Что входит в стандартный монтаж:</div>
+        <ul>
+          <li>Установка внутреннего и наружного блоков</li>
+          <li>Трасса до 3 м — медные трубы, кабель, дренаж</li>
+          <li>Декоративный короб на трассу</li>
+          <li>Вакуумирование и пусконаладка</li>
+        </ul>
+        <div class="pf-note">Замер, выезд и расчёт — бесплатно. Сверх стандарта (длинная трасса, сложный доступ, демонтаж) — по прайсу, всё озвучим на замере.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="sec" id="calc">
   <div class="container">
     <div class="sec-head reveal">
@@ -958,8 +1194,8 @@ footer{position:relative;z-index:2;border-top:1px solid var(--line);padding:50px
           </div>
           <div class="co-mdl" id="mdl">Подойдёт: Pioneer Artis, Daichi AIR, LG Evo Max</div>
           <div class="rbtns">
-            <a href="#catalog" class="btn btn-primary">Подобрать модель</a>
-            <a href="tel:+375447611653" class="btn btn-ghost">Замер</a>
+            <button type="button" class="btn btn-primary" onclick="orderFromCalc()">Заказать бесплатный замер</button>
+            <a href="catalog.html" class="btn btn-ghost">Смотреть модели</a>
           </div>
         </div>
       </div>
@@ -967,258 +1203,6 @@ footer{position:relative;z-index:2;border-top:1px solid var(--line);padding:50px
   </div>
 </section>
 
-<!-- CATALOG -->
-<section class="sec" id="catalog">
-  <div class="container">
-    <div class="sec-head reveal">
-      <div class="eyebrow">Каталог</div>
-      <h2>Кондиционеры <span class="accent-text">в наличии</span></h2>
-      <p>Инверторные и классические сплит-системы ведущих брендов. Цена за комплект. Ставим и <b>мульти-сплит</b> — один внешний блок на несколько комнат: подберём под запрос.</p>
-    </div>
-    <div class="filters reveal" id="filters">
-      <button class="active" data-f="all">Все</button>
-      <button data-f="Pioneer">Pioneer</button>
-      <button data-f="LG">LG</button>
-      <button data-f="Electrolux">Electrolux</button>
-      <button data-f="MDV">MDV</button>
-      <button data-f="Daichi">Daichi</button>
-    </div>
-    <div class="cat-grid" id="catgrid"></div>
-  </div>
-</section>
-
-<!-- HOW -->
-<section class="sec" id="how">
-  <div class="container">
-    <div class="sec-head reveal">
-      <div class="eyebrow">Как мы работаем</div>
-      <h2>От звонка до <span class="accent-text">прохлады</span> — 4 шага</h2>
-      <p>Обычно весь монтаж — за один день, около 3 часов на объекте. Аккуратно, чисто, с уборкой за собой.</p>
-    </div>
-    <div class="steps">
-      <div class="step reveal">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
-        <h3>Заявка</h3>
-        <p>Звоните или оставляете заявку на сайте. Подберём модель под ваш бюджет и площадь.</p>
-      </div>
-      <div class="step reveal">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 3h20v14H2zM8 21h8M12 17v4"/></svg></div>
-        <h3>Бесплатный замер</h3>
-        <p>Специалист приезжает, оценивает помещение и согласовывает место установки.</p>
-      </div>
-      <div class="step reveal">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14.7 6.3a5 5 0 00-6.4 6.4L3 18v3h3l5.3-5.3a5 5 0 006.4-6.4l-3 3-2.5-.5-.5-2.5 3-3z"/></svg></div>
-        <h3>Монтаж за 1 день</h3>
-        <p>Привозим и устанавливаем технику под ключ — обычно за один день, около 3 часов на объекте.</p>
-      </div>
-      <div class="step reveal">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
-        <h3>Документы и гарантия</h3>
-        <p>Оформляем договор, акт выполненных работ и гарантийный талон. Гарантия на монтаж — до 5 лет.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="sec">
-  <div class="container">
-    <div class="cta-banner reveal">
-      <h2>Готовы к прохладе этим летом?</h2>
-      <p>Оставьте заявку — перезвоним, бесплатно замерим и подберём кондиционер под ваш бюджет.</p>
-      <a href="tel:+375447611653" class="btn btn-primary" style="margin:0 auto">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#0a0a0b" stroke-width="2.2" stroke-linecap="round" style="width:18px;height:18px"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        Позвонить: +375 44 761-16-53
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- REVIEWS -->
-<section class="sec" id="reviews">
-  <div class="container">
-    <div class="sec-head reveal">
-      <div class="eyebrow">Отзывы</div>
-      <h2>Нам <span class="accent-text">доверяют</span></h2>
-      <p>Более 800 довольных клиентов в Минске, Бресте и областях.</p>
-    </div>
-    <div class="rev-grid">
-      <div class="rev reveal">
-        <div class="stars">★★★★★</div>
-        <p>«Замерили бесплатно, привезли на следующий день и установили за пару часов. Всё чисто, аккуратно. Кондиционер работает тихо — очень доволен!»</p>
-        <div class="who"><div class="av">А</div><div><b>Андрей</b><span>Минск, Каменная Горка</span></div></div>
-      </div>
-      <div class="rev reveal">
-        <div class="stars">★★★★★</div>
-        <p>«Долго выбирала, ребята помогли подобрать модель под комнату 25 м². Цена оказалась ниже, чем в магазинах. Рекомендую!»</p>
-        <div class="who"><div class="av">М</div><div><b>Марина</b><span>Минск, Уручье</span></div></div>
-      </div>
-      <div class="rev reveal">
-        <div class="stars">★★★★★</div>
-        <p>«Отличный сервис от заявки до гарантии. Мастер всё объяснил, показал как пользоваться Wi-Fi управлением. Спасибо за работу!»</p>
-        <div class="who"><div class="av">С</div><div><b>Сергей</b><span>Минск, Малиновка</span></div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ПОРТФОЛИО РАБОТ  (ЗАМЕНИ фото/цены/данные на свои реальные — данные в JS-массиве portfolio) -->
-<section class="sec" id="portfolio">
-  <div class="container">
-    <div class="sec-head reveal">
-      <div class="eyebrow">Наши работы</div>
-      <h2>Портфолио <span class="accent-text">выполненных монтажей</span></h2>
-      <p>Реальные объекты в Минске и области: что ставили, за сколько и как быстро.</p>
-    </div>
-    <div class="port-grid" id="portgrid"></div>
-  </div>
-</section>
-
-<!-- СТОИМОСТЬ МОНТАЖА -->
-<section class="sec" id="pricing">
-  <div class="container">
-    <div class="sec-head reveal">
-      <div class="eyebrow">Стоимость монтажа</div>
-      <h2>Монтаж <span class="accent-text">от 500 руб</span> — честно, без переплат</h2>
-      <p>Точную стоимость назовём после бесплатного замера — платите только за то, что реально нужно. Возможна рассрочка.</p>
-    </div>
-    <div class="price-wrap reveal">
-      <div class="price-main">
-        <div class="price-big">от 500 <span style="font-size:1.4rem;-webkit-text-fill-color:var(--mut);color:var(--mut)">руб</span></div>
-        <div class="price-sub">Стандартный монтаж настенного кондиционера. Точная цена — после бесплатного замера.</div>
-        <div class="price-badges">
-          <span>💳 Рассрочка / оплата частями</span>
-          <span>📄 Договор · акт · гарантийный талон</span>
-          <span>🛡 Гарантия на монтаж — до 5 лет</span>
-        </div>
-        <a href="#contacts" class="btn btn-primary">Заказать бесплатный замер</a>
-      </div>
-      <div class="price-factors">
-        <div class="pf-title">Что входит в стандартный монтаж:</div>
-        <ul>
-          <li>Установка внутреннего и наружного блоков</li>
-          <li>Трасса до 3 м — медные трубы, кабель, дренаж</li>
-          <li>Декоративный короб на трассу</li>
-          <li>Вакуумирование и пусконаладка</li>
-        </ul>
-        <div class="pf-note">Замер, выезд и расчёт — бесплатно. Сверх стандарта (длинная трасса, сложный доступ, демонтаж) — по прайсу, всё озвучим на замере.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ПРАЙС-ЛИСТ / ЛИД-МАГНИТ -->
-<section class="sec" id="pricelist">
-  <div class="container">
-    <div class="sec-head reveal">
-      <div class="eyebrow">Прайс-лист</div>
-      <h2>Цены на <span class="accent-text">оборудование</span></h2>
-      <p>Актуальные цены на популярные модели. Полную подборку под ваш объект пришлём в мессенджер.</p>
-    </div>
-    <div class="price-lead reveal">
-      <div class="pricetable-wrap">
-        <table class="pricetable">
-          <thead><tr><th>Модель</th><th style="text-align:right">Цена, руб.</th></tr></thead>
-          <tbody id="pricebody"></tbody>
-        </table>
-      </div>
-      <div class="pricelead-card">
-        <h3>Получить прайс и подборку</h3>
-        <p>Оставьте контакт — пришлём полный каталог с ценами под ваш бюджет и площадь. Или скачайте прайс прямо сейчас.</p>
-        <button type="button" class="btn-pdf" onclick="window.print()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="width:18px;height:18px"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>Скачать прайс (PDF)</button>
-        <form id="priceform">
-          <input type="text" name="name" placeholder="Ваше имя" required>
-          <input type="tel" name="phone" placeholder="Телефон / мессенджер" required>
-          <button type="submit" class="btn btn-primary" style="justify-content:center">Прислать полный каталог</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- КВИЗ -->
-<section class="sec" id="quiz">
-  <div class="container">
-    <div class="quiz-card reveal">
-      <div class="quiz-head">
-        <div class="eyebrow">Быстрый расчёт</div>
-        <h2>Узнайте цену и <span class="accent-text">скидку</span> за 30 секунд</h2>
-        <p>Ответьте на 2 вопроса — пришлём расчёт под вашу комнату и бонус на монтаж.</p>
-      </div>
-      <div class="quiz-progress"><span id="quizBar"></span></div>
-      <div class="quiz-body">
-        <div class="quiz-step" data-step="1">
-          <div class="quiz-q">1. Что будем охлаждать?</div>
-          <div class="quiz-opts">
-            <button data-v="Квартира">🏢 Квартиру</button>
-            <button data-v="Частный дом">🏠 Дом</button>
-            <button data-v="Офис">💼 Офис</button>
-            <button data-v="Другое">📦 Другое</button>
-          </div>
-        </div>
-        <div class="quiz-step" data-step="2" hidden>
-          <div class="quiz-q">2. Площадь помещения?</div>
-          <div class="quiz-opts">
-            <button data-v="до 20 м²">до 20 м²</button>
-            <button data-v="20–35 м²">20–35 м²</button>
-            <button data-v="35–50 м²">35–50 м²</button>
-            <button data-v="больше 50 м²">больше 50 м²</button>
-          </div>
-        </div>
-        <div class="quiz-step" data-step="3" hidden>
-          <div class="quiz-est" id="quizEst"></div>
-          <div class="quiz-q">Куда прислать точный расчёт и скидку?</div>
-          <form id="quizForm" class="quiz-form">
-            <input name="name" placeholder="Ваше имя" required>
-            <input name="phone" type="tel" placeholder="Телефон для связи" required>
-            <button class="btn btn-primary" type="submit">Получить расчёт + скидку</button>
-            <p class="quiz-note">Перезвоним в течение 15 минут. Скидку зафиксируем за вами.</p>
-          </form>
-        </div>
-        <div class="quiz-back"><button id="quizBack" hidden>← Назад</button></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section class="sec" id="faq">
-  <div class="container">
-    <div class="sec-head reveal">
-      <div class="eyebrow">Вопросы и ответы</div>
-      <h2>Отвечаем на <span class="accent-text">частые вопросы</span></h2>
-      <p>Всё, что обычно спрашивают перед заказом. Не нашли ответ — звоните, подскажем.</p>
-    </div>
-    <div class="faq-list">
-      <div class="faq-item reveal">
-        <button class="faq-q">За сколько времени установите кондиционер?<span class="faq-ic">+</span></button>
-        <div class="faq-a"><p>Обычно монтаж занимает несколько часов и выполняется за один день после бесплатного замера. В большинстве случаев привозим и устанавливаем в удобное для вас время.</p></div>
-      </div>
-      <div class="faq-item reveal">
-        <button class="faq-q">Замер и доставка правда бесплатные?<span class="faq-ic">+</span></button>
-        <div class="faq-a"><p>Да. Замер помещения и доставка по Минску и области — бесплатно, без обязательств. Специалист подберёт оптимальную мощность именно под вашу комнату.</p></div>
-      </div>
-      <div class="faq-item reveal">
-        <button class="faq-q">Какая гарантия на оборудование и монтаж?<span class="faq-ic">+</span></button>
-        <div class="faq-a"><p>Гарантия до 5 лет — и на сам кондиционер, и на установку. Работаем официально и отвечаем за качество монтажа.</p></div>
-      </div>
-      <div class="faq-item reveal">
-        <button class="faq-q">Можно ли пользоваться зимой на обогрев?<span class="faq-ic">+</span></button>
-        <div class="faq-a"><p>Да. Инверторные модели греют весной и осенью как тепловой насос. Модели серии LOW работают на обогрев даже в мороз — до −25°C.</p></div>
-      </div>
-      <div class="faq-item reveal">
-        <button class="faq-q">Насколько шумно работает кондиционер?<span class="faq-ic">+</span></button>
-        <div class="faq-a"><p>Уровень шума внутреннего блока — от 27 дБ, это тише шёпота. Есть ночной режим, поэтому техника не мешает спать.</p></div>
-      </div>
-      <div class="faq-item reveal">
-        <button class="faq-q">Как понять, какая мощность мне нужна?<span class="faq-ic">+</span></button>
-        <div class="faq-a"><p>Воспользуйтесь нашим <a href="#calc" style="color:var(--accent)">калькулятором</a> — укажите размеры комнаты и получите нужную мощность и подходящую модель. А точное значение подтвердит специалист на бесплатном замере.</p></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ГЕОГРАФИЯ / ГОРОДА -->
 <section class="sec" id="geo">
   <div class="container">
     <div class="sec-head reveal">
@@ -1237,7 +1221,6 @@ footer{position:relative;z-index:2;border-top:1px solid var(--line);padding:50px
   </div>
 </section>
 
-<!-- CONTACTS -->
 <section class="sec" id="contacts">
   <div class="container">
     <div class="sec-head reveal">
@@ -1300,8 +1283,7 @@ footer{position:relative;z-index:2;border-top:1px solid var(--line);padding:50px
       <div>
         <h4>Разделы</h4>
         <a href="#promos">Акции и скидки</a>
-        <a href="#catalog">Каталог</a>
-        <a href="#pricelist">Прайс-лист</a>
+        <a href="catalog.html">Каталог</a>
         <a href="#portfolio">Наши работы</a>
         <a href="#reviews">Отзывы</a>
         <a href="kak-vybrat-konditsioner.html">Как выбрать кондиционер</a>
@@ -1361,11 +1343,11 @@ function acSVG(temp){return `<svg class="ac-svg" viewBox="0 0 320 150" xmlns="ht
 
 /* ===== Products ===== */
 const products=[
-  {brand:"MDV",name:"MDV Classic Inverter",model:"MDSC-07HRDN8 / MDOC-07HDN8",area:"до 20 м²",power:"2.05 кВт",feat:"Инвертор · R32",price:"1 800",img:"images/mdv-classic.png",desc:"Надёжная инверторная сплит-система для небольших комнат до 20 м². Плавно держит температуру, тихо работает, экологичный хладагент R32.",tags:["Инвертор","Хладагент R32","Тихий режим","Охлаждение и обогрев"]},
-  {brand:"Pioneer",name:"Pioneer Artis Inverter",model:"KFRI20LW / KORI20LW",area:"до 20 м²",power:"2.0 кВт",feat:"Wi-Fi · Cold Plasma",price:"2 100",img:"images/pioneer-artis.png",desc:"Инверторный кондиционер с Wi-Fi-управлением и очисткой воздуха Cold Plasma. Для спальни или кабинета до 20 м².",tags:["Wi-Fi управление","Cold Plasma — очистка","Инвертор","Ночной режим"]},
+  {top:true,brand:"MDV",name:"MDV Classic Inverter",model:"MDSC-07HRDN8 / MDOC-07HDN8",area:"до 20 м²",power:"2.05 кВт",feat:"Инвертор · R32",price:"1 800",img:"images/mdv-classic.png",desc:"Надёжная инверторная сплит-система для небольших комнат до 20 м². Плавно держит температуру, тихо работает, экологичный хладагент R32.",tags:["Инвертор","Хладагент R32","Тихий режим","Охлаждение и обогрев"]},
+  {top:true,brand:"Pioneer",name:"Pioneer Artis Inverter",model:"KFRI20LW / KORI20LW",area:"до 20 м²",power:"2.0 кВт",feat:"Wi-Fi · Cold Plasma",price:"2 100",img:"images/pioneer-artis.png",desc:"Инверторный кондиционер с Wi-Fi-управлением и очисткой воздуха Cold Plasma. Для спальни или кабинета до 20 м².",tags:["Wi-Fi управление","Cold Plasma — очистка","Инвертор","Ночной режим"]},
   {brand:"Daichi",name:"Daichi AIR Inverter",model:"AIR25AVQS1R / AIR25FVS1R",area:"до 27 м²",power:"2.5 кВт",feat:"Инвертор · R32",price:"2 028",img:"images/daichi-air.png",desc:"Инверторная модель для комнат до 27 м². Экономичный компрессор и хладагент R32, ровное охлаждение без перепадов.",tags:["Инвертор","Хладагент R32","До 27 м²","Экономичность"]},
   {brand:"Pioneer",name:"Pioneer Artis Inverter",model:"KFRI25LW / KORI25LW",area:"до 27 м²",power:"2.65 кВт",feat:"Wi-Fi · 3D-свинг · Ионизатор",price:"2 250",img:"images/pioneer-artis.png",desc:"Мощнее младшей версии: до 27 м², Wi-Fi, 3D-распределение потока и ионизация воздуха. Отлично для гостиной.",tags:["Wi-Fi управление","3D-свинг потока","Ионизатор","Инвертор"]},
-  {brand:"LG",name:"LG Evo Max",model:"DC07RH",area:"до 25 м²",power:"2.5 кВт",feat:"Dual Inverter · Wi-Fi",price:"2 580",img:"images/lg-evomax.png",desc:"Технология Dual Inverter: тихая работа, экономия энергии и быстрое охлаждение. Управление со смартфона по Wi-Fi.",tags:["Dual Inverter","Wi-Fi управление","Тихая работа","Энергоэффективность"]},
+  {top:true,brand:"LG",name:"LG Evo Max",model:"DC07RH",area:"до 25 м²",power:"2.5 кВт",feat:"Dual Inverter · Wi-Fi",price:"2 580",img:"images/lg-evomax.png",desc:"Технология Dual Inverter: тихая работа, экономия энергии и быстрое охлаждение. Управление со смартфона по Wi-Fi.",tags:["Dual Inverter","Wi-Fi управление","Тихая работа","Энергоэффективность"]},
   {brand:"Pioneer",name:"Pioneer Artis LOW Inverter",model:"обогрев до −25°C",area:"до 27 м²",power:"2.65 кВт",feat:"Зимний комплект · Wi-Fi",price:"request",img:"images/pioneer-artis.png",desc:"Зимняя версия с обогревом до −25 °C. Работает круглый год, Wi-Fi-управление. Точную цену назовём по запросу.",tags:["Обогрев до −25°C","Зимний комплект","Wi-Fi управление","Круглый год"]},
   {brand:"Electrolux",name:"Electrolux Atrium DC Inverter",model:"серия Atrium",area:"до 25 м²",power:"2.6 кВт",feat:"DC Inverter · ионизация",price:"request",img:"",desc:"DC-инверторная сплит-система с ионизацией воздуха для комнат до 25 м². Точную цену назовём по запросу.",tags:["DC Inverter","Ионизация воздуха","До 25 м²"]},
   {brand:"Electrolux",name:"Electrolux Portofino Super DC",model:"серия Portofino",area:"до 25 м²",power:"2.6 кВт",feat:"Super DC Inverter · Wi-Fi",price:"request",img:"",desc:"Super DC Inverter и Wi-Fi — тихая и экономичная работа. Точную цену назовём по запросу.",tags:["Super DC Inverter","Wi-Fi управление","Тихая работа"]},
@@ -1392,7 +1374,9 @@ const featIcon='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strok
 function render(filter){
   const grid=document.getElementById('catgrid');
   grid.innerHTML='';
+  const onlyTop=grid.dataset.top==='1';
   products.forEach((p,pi)=>{
+    if(onlyTop&&!p.top)return;
     if(filter!=='all'&&p.brand!==filter)return;
     const priceHtml = p.price==='request'
       ? '<div class="price request">Цена по запросу</div>'
@@ -1426,6 +1410,7 @@ function render(filter){
       </div>`;
     grid.appendChild(el);
   });
+  if(window.smartSwipe)window.smartSwipe.init();
 }
 render('all');
 
@@ -1595,6 +1580,7 @@ document.querySelectorAll('[data-count]').forEach(el=>cio.observe(el));
 (function(){
   const g=id=>document.getElementById(id);
   const svg=g('room3d');
+  if(!svg)return; // на странице каталога 3D-плана нет
   const VW=440,VH=340,C30=Math.cos(Math.PI/6),S30=Math.sin(Math.PI/6);
 
   const state={L:4,W:4,H:3,rot:0,q:35,heat:true};
@@ -2022,15 +2008,90 @@ var leadPref='Звонок';
   });
 })();
 
-/* ===== «Заказать в 1 клик» — прокидывает модель в форму заявки ===== */
-function quickOrder(model){
-  var form=document.getElementById('leadform');
-  var ta=form.querySelector('[name=msg]');
-  ta.value='Хочу заказать: '+model;
-  document.getElementById('contacts').scrollIntoView({behavior:'smooth'});
-  setTimeout(function(){form.querySelector('[name=name]').focus();},600);
-  ta.style.borderColor='var(--accent)';
-  setTimeout(function(){ta.style.borderColor='';},2500);
+/* ===== Листание карточек вбок на телефоне ===== */
+(function(){
+  var sel='.promo-grid,.cat-grid,.rev-grid,.port-grid,.adv-grid';
+  function build(grid){
+    if(grid.dataset.swipe)return;
+    grid.dataset.swipe='1';
+    var nav=document.createElement('div');
+    nav.className='swipe-nav';
+    nav.innerHTML='<button type="button" aria-label="Назад">‹</button><button type="button" aria-label="Вперёд">›</button>';
+    grid.parentNode.insertBefore(nav,grid.nextSibling);
+    var prev=nav.children[0],next=nav.children[1];
+    function step(){var c=grid.firstElementChild;return c?c.getBoundingClientRect().width+14:300;}
+    prev.onclick=function(){grid.scrollBy({left:-step(),behavior:'smooth'});};
+    next.onclick=function(){grid.scrollBy({left:step(),behavior:'smooth'});};
+    function upd(){
+      var max=grid.scrollWidth-grid.clientWidth-4;
+      prev.disabled=grid.scrollLeft<=4;
+      next.disabled=grid.scrollLeft>=max;
+      prev.classList.toggle('on',!prev.disabled);
+      next.classList.toggle('on',!next.disabled);
+    }
+    grid.addEventListener('scroll',upd,{passive:true});
+    window.addEventListener('resize',upd);
+    setTimeout(upd,300);
+  }
+  function init(){document.querySelectorAll(sel).forEach(build);}
+  init();
+  window.addEventListener('load',init);
+  window.smartSwipe={init:init};
+})();
+
+/* ===== Короткая заявка: открывается прямо у блока, помнит, откуда пришёл клиент ===== */
+var qlSource='';
+(function(){
+  var m=document.createElement('div');
+  m.id='qlModal';
+  m.innerHTML='<div class="ql-back"></div><div class="ql-inner">'+
+    '<button type="button" class="ql-close" aria-label="Закрыть">×</button>'+
+    '<h3>Оставьте заявку</h3>'+
+    '<div class="ql-src" id="qlSrc"></div>'+
+    '<div class="ql-note">Перезвоним, уточним детали и бесплатно приедем на замер.</div>'+
+    '<form id="qlForm"><input type="text" name="name" placeholder="Ваше имя" required>'+
+    '<input type="tel" name="phone" placeholder="Телефон" required>'+
+    '<button type="submit" class="btn btn-primary">Отправить заявку</button></form>'+
+    '<a class="ql-phone" href="tel:+375447611653">или позвоните: <b>+375 44 761-16-53</b></a>'+
+    '</div>';
+  document.body.appendChild(m);
+  m.querySelector('.ql-back').onclick=closeQuick;
+  m.querySelector('.ql-close').onclick=closeQuick;
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeQuick();});
+  m.querySelector('#qlForm').addEventListener('submit',function(e){
+    e.preventDefault();
+    var f=this, btn=f.querySelector('button[type=submit]'), orig=btn.textContent;
+    var cityEl=document.getElementById('leadCity');
+    var city=(window.__CITYPAGE)||(cityEl?cityEl.value:'');
+    var msg='📌 Откуда заявка: '+qlSource+(city?'\n🏙 Город: '+city:'');
+    btn.disabled=true; btn.textContent='Отправляем…';
+    sendLead(f.name.value,f.phone.value,msg).then(function(ok){
+      if(ok){
+        btn.textContent='✓ Заявка отправлена!';
+        btn.style.background='linear-gradient(135deg,#22c55e,#16a34a)';
+        if(window.ym&&YM_ID!=="00000000")ym(YM_ID,'reachGoal','lead');
+        if(window.fbq&&FB_ID!=="PIXEL_ID")fbq('track','Lead');
+        setTimeout(function(){closeQuick();f.reset();btn.textContent=orig;btn.style.background='';btn.disabled=false;},1800);
+      }else{
+        btn.textContent='Ошибка — позвоните нам';
+        setTimeout(function(){btn.textContent=orig;btn.disabled=false;},3000);
+      }
+    });
+  });
+})();
+function quickOrder(source){
+  qlSource=source;
+  document.getElementById('qlSrc').textContent=source;
+  document.getElementById('qlModal').classList.add('open');
+  setTimeout(function(){document.querySelector('#qlForm [name=name]').focus();},150);
+}
+function closeQuick(){var m=document.getElementById('qlModal');if(m)m.classList.remove('open');}
+/* заявка из 3D-калькулятора — с параметрами подбора */
+function orderFromCalc(){
+  var kw=document.getElementById('kw'), area=document.getElementById('areaOut'), cls=document.getElementById('cls');
+  var txt='3D-калькулятор';
+  if(kw&&area&&cls)txt+=' — '+area.textContent+' м², нужно '+kw.textContent+' кВт, '+cls.textContent;
+  quickOrder(txt);
 }
 
 /* ===== Форма заявки ===== */
