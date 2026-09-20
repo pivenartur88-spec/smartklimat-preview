@@ -174,6 +174,31 @@ body.no-promo .hero{padding-top:112px}
 .hero-visual img{width:100%;height:auto;filter:drop-shadow(0 26px 60px rgba(0,0,0,.55));animation:hoverFloat 6s ease-in-out infinite}
 @keyframes hoverFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
 
+/* хит продаж на первом экране */
+.hit-wrap{display:grid;grid-template-columns:1fr minmax(260px,1.05fr) 1fr;gap:26px;align-items:center;margin:46px auto 0;max-width:1180px;text-align:left}
+.hit-cap{font-size:.78rem;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+.hit-list{list-style:none;display:flex;flex-direction:column;gap:12px}
+.hit-list li{color:var(--mut);font-size:.95rem;line-height:1.5;padding-left:22px;position:relative}
+.hit-list li:before{content:"✓";position:absolute;left:0;top:0;color:var(--accent);font-weight:800}
+.hit-list b{color:var(--txt);font-weight:700}
+.hit-specs{list-style:none;display:flex;flex-direction:column;gap:8px}
+.hit-specs li{display:flex;justify-content:space-between;gap:12px;font-size:.92rem;padding-bottom:7px;border-bottom:1px solid var(--line)}
+.hit-specs span{color:var(--mut)}
+.hit-specs b{color:var(--txt);font-weight:700;text-align:right}
+.hit-where{margin-top:14px;color:var(--mut);font-size:.92rem;line-height:1.5}
+.hit-where b{color:var(--txt)}
+.hit-wrap .hero-visual{margin:0;max-width:none;text-align:center}
+.hit-badge{display:inline-block;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#0a0a0b;font-weight:800;font-size:.82rem;padding:7px 16px;border-radius:100px;margin-bottom:10px}
+.hit-name{font-size:1.25rem;font-weight:800;margin-top:6px}
+.hit-price{color:var(--accent);font-weight:800;font-size:1.3rem;margin-top:4px}
+.hit-price span{display:block;color:var(--mut);font-weight:600;font-size:.86rem;margin-top:2px}
+.hit-btn{margin-top:16px}
+@media(max-width:980px){
+  .hit-wrap{grid-template-columns:1fr;gap:22px;max-width:620px}
+  .hit-wrap .hero-visual{order:-1}
+  .hit-specs li{font-size:.9rem}
+}
+
 /* stats */
 .stats{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:38px}
 .stat{
@@ -821,9 +846,43 @@ footer{position:relative;z-index:2;border-top:1px solid var(--line);padding:50px
       <div class="stat reveal"><div class="num accent-text" data-count="5">0</div><div class="lbl">лет гарантии</div></div>
       <div class="stat reveal"><div class="num accent-text" data-count="0" data-text="24ч">0</div><div class="lbl">монтаж за 1 день</div></div>
     </div>
-    <!-- Большое фото кондиционера опущено под цифры -->
-    <div class="hero-visual reveal">
-      <img src="images/pioneer-artis-big.png" alt="Кондиционер Pioneer Artis Inverter — внутренний и внешний блок, пульт">
+    <!-- Хит продаж: слева простыми словами, в центре фото, справа характеристики -->
+    <div class="hit-wrap reveal">
+      <div class="hit-col">
+        <div class="hit-cap">Простыми словами</div>
+        <ul class="hit-list">
+          <li><b>Берут чаще всего.</b> Эту модель заказывают в квартиры и дома чаще остальных.</li>
+          <li><b>Тихий.</b> Инвертор работает плавно, без щелчков и гула — спать не мешает.</li>
+          <li><b>Экономит электричество.</b> Не включается-выключается рывками, а держит температуру ровно.</li>
+          <li><b>Включается с телефона.</b> По дороге домой включили — заходите в прохладу.</li>
+          <li><b>Греет весной и осенью,</b> когда отопление уже выключили. Есть зимняя версия — греет и в мороз.</li>
+          <li><b>Ставим за один день,</b> гарантия на монтаж до 5 лет.</li>
+        </ul>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hit-badge">Хит продаж</div>
+        <img src="images/pioneer-artis-big.png" alt="Кондиционер Pioneer Artis Inverter — внутренний и внешний блок, пульт">
+        <div class="hit-name">Pioneer Artis Inverter</div>
+        <div class="hit-price">от 2 250 руб <span>+ монтаж от 500 руб</span></div>
+        <button type="button" class="btn btn-primary hit-btn" onclick="quickOrder('Хит продаж — Pioneer Artis Inverter')">Заказать этот кондиционер</button>
+      </div>
+
+      <div class="hit-col">
+        <div class="hit-cap">Характеристики</div>
+        <ul class="hit-specs">
+          <li><span>Модель</span><b>KFRI25LW / KORI25LW</b></li>
+          <li><span>Мощность холода</span><b>2.65 кВт</b></li>
+          <li><span>Площадь комнаты</span><b>до 27 м²</b></li>
+          <li><span>Компрессор</span><b>инверторный</b></li>
+          <li><span>Хладагент</span><b>R32</b></li>
+          <li><span>Управление</span><b>Wi-Fi со смартфона</b></li>
+          <li><span>Воздух</span><b>3D-поток, ионизатор</b></li>
+          <li><span>Режимы</span><b>холод · тепло · осушение</b></li>
+          <li><span>Зимой</span><b>версия LOW: обогрев до −25 °C</b></li>
+        </ul>
+        <div class="hit-where"><b>Куда ставят:</b> спальня, гостиная, кабинет, квартира-студия, небольшой офис или магазин до 27 м².</div>
+      </div>
     </div>
   </div>
 </section>
